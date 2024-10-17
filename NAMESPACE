@@ -2,5 +2,10 @@
 
 export(basin_name)
 export(build_ddmmss)
+export(correction_coordinates)
+export(epsg_ceh)
 export(extract_ddmmss)
+export(format_columns)
 export(read_cedex_basin)
+export(select_coord)
+export(set_colmode)

@@ -7,17 +7,18 @@
 read_cedex_basin(
   table = "estaf",
   basin = "all",
-  cs = "wgs84",
+  sf = TRUE,
+  cs = "utm30",
   url = NULL,
-  verbose = T
+  verbose = TRUE
 )
 }
 \arguments{
 \item{table}{\code{character} with the name of the file to retrieve from the
-\emph{cedex} site, without extension. If not given, the default value is "afliq".}
+\emph{cedex} site, without extension. If not given, the default value is "estaf".}
 
 \item{cs}{\code{character} indicating the coordinate system of choice. Values can be
-"UTM", "UTM30", "WGS84" (default), "ED50" or "ETRS89" in lower or upper case letters (e.g. "wgs84" is valid,
+"UTM", "UTM30" (default), "WGS84", "ED50" or "ETRS89" in lower or upper case letters (e.g. "wgs84" is valid,
 as is "Wgs84").}
 
 \item{verbose}{\code{logical}, if set to TRUE progress messages are printed on screen.}
@@ -48,8 +49,4 @@ system with those datums.
 
 The \code{encoding} argument of the \code{read.csv2} function is set to "latin1" in order to
 correctly read diacritics and tildes.
-}
-\examples{
-# Read afliq.csv data
-x <- read_cedex_basin(cs = "wgs84")
 }
