@@ -1,0 +1,423 @@
+num_cuenca;corriente;tipo_corr_id;cdr1;cdr2;desde;hasta;comentario;longitud;suprcnc;ambito_id
+2001;DUERO                         ;12;0201            ;0002;ORIGEN                    ;TRIGUERA                  ;                       ;8.8;18.14;21
+2002;TRIGUERA                      ;12;020102          ;0000;ORIGEN                    ;DUERO                     ;                       ;7.9;17.77;21
+2003;DUERO                         ;12;0201            ;0201;TRIGUERA                  ;REVINUESA                 ;                       ;21.2;101.14;21
+2004;REVINUESA                     ;12;020101          ;0000;ORIGEN                    ;DUERO                     ;                       ;20.6;122.36;21
+2005;DUERO                         ;12;0201            ;0104;REVINUESA                 ;EBRILLOS                  ;                       ;5.1;22.2;21
+2006;EBRILLOS                      ;12;020104          ;0002;ORIGEN                    ;VADILLO                   ;                       ;9.7;33.47;21
+2007;VADILLO                       ;12;02010402        ;0000;ORIGEN                    ;EBRILLOS                  ;                       ;11;23.64;21
+2008;EBRILLOS                      ;12;020104          ;0200;VADILLO                   ;DUERO                     ;                       ;21.5;205.81;21
+2009;DUERO                         ;12;0201            ;0406;EBRILLOS                  ;PEDRAJAS                  ;                       ;26.3;142.96;21
+2010;PEDRAJAS                      ;12;020106          ;0000;ORIGEN                    ;DUERO                     ;                       ;17.7;68.17;21
+2011;DUERO                         ;12;0201            ;0603;PEDRAJAS                  ;TERA                      ;                       ;5.5;20.92;21
+2012;TERA                          ;12;020103          ;0002;ORIGEN                    ;RAZON                     ;                       ;23;190.4;21
+2013;RAZON                         ;12;02010302        ;0001;ORIGEN                    ;RAZONCILLO                ;                       ;19.5;73.8;21
+2014;RAZONCILLO                    ;12;0201030201      ;0000;ORIGEN                    ;RAZON                     ;                       ;9.1;53.16;21
+2015;RAZON                         ;12;02010302        ;0100;RAZONCILLO                ;TERA                      ;                       ;12.2;44.89;21
+2016;TERA                          ;12;020103          ;0200;RAZON                     ;DUERO                     ;                       ;10.5;66.19;21
+2017;DUERO                         ;12;0201            ;0305;TERA                      ;MERDANCHO                 ;                       ;1.8;1.62;21
+2018;MERDANCHO                     ;12;020105          ;0001;ORIGEN                    ;CHAVALINDO                ;                       ;19.1;143.76;21
+2019;CHAVALINDO                    ;12;02010501        ;0000;ORIGEN                    ;MERDANCHO                 ;                       ;9.8;85.8;21
+2020;MERDANCHO                     ;12;020105          ;0100;CHAVALINDO                ;DUERO                     ;                       ;5.4;23.38;21
+2021;DUERO                         ;12;0201            ;0508;MERDANCHO                 ;GOLMAYO                   ;                       ;7.1;31.53;21
+2022;GOLMAYO                       ;12;020108          ;0000;ORIGEN                    ;DUERO                     ;                       ;11.7;60.4;21
+2023;DUERO                         ;12;0201            ;0807;GOLMAYO                   ;RITUERTO                  ;                       ;37.1;208.66;21
+2024;RITUERTO                      ;12;020107          ;0001;ORIGEN                    ;ARAVIANA                  ;                       ;13.2;183.83;21
+2025;ARAVIANA                      ;12;02010701        ;0000;ORIGEN                    ;RITUERTO                  ;                       ;33.6;154.9;21
+2026;RITUERTO                      ;12;020107          ;0100;ARAVIANA                  ;DUERO                     ;                       ;32.1;467.14;21
+2027;DUERO                         ;12;0201            ;0710;RITUERTO                  ;MAZO                      ;                       ;9.1;79.55;21
+2028;MAZO                          ;12;020110          ;0000;ORIGEN                    ;DUERO                     ;                       ;30.4;128.95;21
+2029;DUERO                         ;12;0201            ;1009;MAZO                      ;MORON                     ;                       ;19.5;182.78;21
+2030;MORON                         ;12;020109          ;0000;ORIGEN                    ;DUERO                     ;                       ;18.8;353.19;21
+2031;DUERO                         ;12;0201            ;0912;MORON                     ;IZANA                     ;                       ;11.7;87.18;21
+2032;IZANA                         ;12;020112          ;0000;ORIGEN                    ;DUERO                     ;                       ;38.7;188.7;21
+2033;DUERO                         ;12;0201            ;1214;IZANA                     ;FUENTEPINILLA             ;                       ;27;180.99;21
+2034;FUENTEPINILLA                 ;12;020114          ;0002;ORIGEN                    ;CASTRO                    ;                       ;9.6;57.73;21
+2035;CASTRO                        ;12;02011402        ;0000;ORIGEN                    ;FUENTEPINILLA             ;                       ;7.4;78.76;21
+2036;FUENTEPINILLA                 ;12;020114          ;0200;CASTRO                    ;DUERO                     ;                       ;10.4;75.51;21
+2037;DUERO                         ;12;0201            ;1411;FUENTEPINILLA             ;BORDECOREX                ;                       ;8;30.11;21
+2038;BORDECOREX                    ;12;020111          ;0001;ORIGEN                    ;ESCALOTE                  ;                       ;49.3;347.8;21
+2039;ESCALOTE                      ;12;02011101        ;0000;ORIGEN                    ;BORDECOREX                ;                       ;27.5;216.07;21
+2040;BORDECOREX                    ;12;020111          ;0100;ESCALOTE                  ;DUERO                     ;                       ;17;73.36;21
+2041;DUERO                         ;12;0201            ;1113;BORDECOREX                ;TALEGONES                 ;                       ;1.6;1.33;21
+2042;TALEGONES                     ;12;020113          ;0000;ORIGEN                    ;DUERO                     ;                       ;39.8;228.75;21
+2043;DUERO                         ;12;0201            ;1316;TALEGONES                 ;BAYUBAS                   ;                       ;0.5;0.19;21
+2044;BAYUBAS                       ;12;020116          ;0000;ORIGEN                    ;DUERO                     ;                       ;13.2;42.05;21
+2045;DUERO                         ;12;0201            ;1615;BAYUBAS                   ;CARACENA                  ;                       ;25.8;224.1;21
+2046;CARACENA                      ;12;020115          ;0001;ORIGEN                    ;MANZANARES                ;                       ;19.5;95.52;21
+2047;MANZANARES                    ;12;02011501        ;0000;ORIGEN                    ;CARACENA                  ;                       ;20.7;78.62;21
+2048;CARACENA                      ;12;020115          ;0100;MANZANARES                ;DUERO                     ;                       ;9.4;20.03;21
+2049;DUERO                         ;12;0201            ;1518;CARACENA                  ;UCERO                     ;                       ;1.2;0.97;21
+2050;CHICO O UCERO                 ;12;020118          ;0002;ORIGEN                    ;LOBOS                     ;                       ;16.3;62.6;21
+2051;LOBOS                         ;12;02011802        ;0001;ORIGEN                    ;NAVALENO                  ;                       ;29.7;158.08;21
+2052;NAVALENO                      ;12;0201180201      ;0000;ORIGEN                    ;LOBOS                     ;                       ;11.9;89.62;21
+2053;LOBOS                         ;12;02011802        ;0100;NAVALENO                  ;UCERO                     ;                       ;13.7;57.39;21
+2054;UCERO                         ;12;020118          ;0201;LOBOS                     ;ABION                     ;                       ;17.9;154.1;21
+2055;ABION                         ;12;02011801        ;0002;ORIGEN                    ;ABIONCILLO                ;                       ;21;129.07;21
+2056;A                             ;12;0201180102      ;0002;ORIGEN                    ;MURIEL VIEJO              ;                       ;15.6;79.44;21
+2057;MURIEL VIEJO                  ;12;020118010202    ;0000;ORIGEN                    ;ABIONCILLO                ;                       ;14.9;63.63;21
+2058;ABIONCILLO                    ;12;0201180102      ;0200;MURIEL VIEJO              ;ABION                     ;                       ;3.1;6.41;21
+2059;ABION                         ;12;02011801        ;0200;ABIONCILLO                ;UCERO                     ;                       ;24.7;96.48;21
+2060;UCERO                         ;12;020118          ;0103;ABION                     ;SEQUILLO                  ;                       ;5;11.78;21
+2061;SEQUILLO                      ;12;02011803        ;0000;ORIGEN                    ;UCERO                     ;                       ;39.4;136.03;21
+2062;UCERO                         ;12;020118          ;0300;SEQUILLO                  ;DUERO                     ;                       ;5.5;8.81;21
+2063;DUERO                         ;12;0201            ;1817;UCERO                     ;PEDRO                     ;                       ;23.1;219.04;21
+2064;PEDRO                         ;12;020117          ;0000;ORIGEN                    ;DUERO                     ;                       ;44.9;299.87;21
+2065;DUERO                         ;12;0201            ;1720;PEDRO                     ;MADRE                     ;                       ;1.3;1.36;21
+2066;MADRE, DE LA                  ;12;020120          ;0000;ORIGEN                    ;DUERO                     ;                       ;20.8;147.75;21
+2067;DUERO                         ;12;0201            ;2022;MADRE                     ;ARANDILLA                 ;                       ;48.5;405.03;21
+2068;ARANDILLA                     ;12;020122          ;0001;ORIGEN                    ;ESPEJA                    ;                       ;15;73.09;21
+2069;ESPEJA                        ;12;02012201        ;0002;ORIGEN                    ;ESPEJON                   ;                       ;6.3;19.29;21
+2070;ESPEJON                       ;12;0201220102      ;0000;ORIGEN                    ;ESPEJA                    ;                       ;9.5;27.6;21
+2071;ESPEJA                        ;12;02012201        ;0200;ESPEJON                   ;ARANDILLA                 ;                       ;10.2;26.47;21
+2072;ARANDILLA                     ;12;020122          ;0103;ESPEJA                    ;PERALES                   ;                       ;14.6;75.34;21
+2073;PERALES                       ;12;02012203        ;0002;ORIGEN                    ;PILDE                     ;                       ;25;145.28;21
+2074;PILDE                         ;12;0201220302      ;0001;ORIGEN                    ;CAÑICERA                  ;                       ;14.1;60.73;21
+2075;CAÑICERA                      ;12;020122030201    ;0000;ORIGEN                    ;PILDE                     ;                       ;8.3;19.06;21
+2076;PILDE                         ;12;0201220302      ;0100;CAÑICERA                  ;PERALES                   ;                       ;12.6;40.94;21
+2077;PERALES                       ;12;02012203        ;0200;PILDE                     ;ARANDILLA                 ;                       ;2.8;7.12;21
+2078;ARANDILLA                     ;12;020122          ;0302;PERALES                   ;ARANZUELO                 ;                       ;10.2;49.51;21
+2079;ARANZUELO                     ;12;02012202        ;0000;ORIGEN                    ;ARANDILLA                 ;                       ;33.2;129.24;21
+2080;ARANDILLA                     ;12;020122          ;0200;ARANZUELO                 ;DUERO                     ;                       ;11.5;38.6;21
+2081;DUERO                         ;12;0201            ;2224;ARANDILLA                 ;BAÑUELOS                  ;                       ;0.3;0.18;21
+2082;BAÑUELO                       ;12;020124          ;0000;ORIGEN                    ;DUERO                     ;                       ;37.6;134.79;21
+2083;DUERO                         ;12;0201            ;2426;BAÑUELOS                  ;FUENTE DEL REY            ;                       ;17.2;256.93;21
+2084;FUENTE DEL REY                ;12;020126          ;0002;ORIGEN                    ;PUENTEVILLA               ;                       ;27.8;81.39;21
+2085;PUENTEVILLA                   ;12;02012602        ;0000;ORIGEN                    ;FUENTE DEL REY            ;                       ;9.5;43.99;21
+2086;FUENTE DEL REY                ;12;020126          ;0200;PUENTEVILLA               ;DUERO                     ;                       ;15.5;105.84;21
+2087;DUERO                         ;12;0201            ;2619;FUENTE DEL REY            ;RIAZA                     ;                       ;6.1;91.72;21
+2088;RIAZA                         ;12;020119          ;0002;ORIGEN                    ;AGUISEJO                  ;                       ;32.6;155.35;21
+2089;AGUISEJO                      ;12;02011902        ;0001;ORIGEN                    ;COBOS                     ;                       ;13.5;46.8;21
+2090;COBOS                         ;12;0201190201      ;0000;ORIGEN                    ;AGUISEJO                  ;                       ;15.5;49.49;21
+2091;AGUISEJO                      ;12;02011902        ;0103;COBOS                     ;VADILLO                   ;                       ;2.2;1.93;21
+2092;VADILLO                       ;12;0201190203      ;0002;ORIGEN                    ;CAMBRONES                 ;                       ;9.6;29.66;21
+2093;CAMBRONES                     ;12;020119020302    ;0000;ORIGEN                    ;VADILLO                   ;                       ;8.3;12.15;21
+2094;VADILLO                       ;12;0201190203      ;0200;CAMBRONES                 ;AGUISEJO                  ;                       ;6;10.78;21
+2095;AGUISEJO                      ;12;02011902        ;0300;VADILLO                   ;RIAZA                     ;                       ;11.9;55.7;21
+2096;RIAZA                         ;12;020119          ;0201;AGUISEJO                  ;BERCIMUEL                 ;                       ;8;32.57;21
+2097;BERCIMUEL                     ;12;02011901        ;0000;ORIGEN                    ;RIAZA                     ;                       ;20.7;254.56;21
+2098;RIAZA                         ;12;020119          ;0100;BERCIMUEL                 ;DUERO                     ;                       ;64.9;436.19;21
+2099;DUERO                         ;12;0201            ;1921;RIAZA                     ;BOTIJAS                   ;                       ;26.8;314.7;21
+2100;BOTIJAS                       ;12;020121          ;0000;ORIGEN                    ;DUERO                     ;                       ;23.4;164.19;21
+2101;DUERO                         ;12;0201            ;2123;BOTIJAS                   ;DURATON                   ;                       ;0.3;0.17;21
+2102;DURATON                       ;12;020123          ;0002;ORIGEN                    ;SERRANO                   ;                       ;27.5;165.19;21
+2103;SERRANO                       ;12;02012302        ;0000;ORIGEN                    ;DURATON                   ;                       ;24.6;80.6;21
+2104;DURATON                       ;12;020123          ;0204;SERRANO                   ;AYUSO                     ;                       ;4.3;8.15;21
+2105;AYUSO                         ;12;02012304        ;0000;ORIGEN                    ;DURATON                   ;                       ;10.2;218.09;21
+2106;DURATON                       ;12;020123          ;0401;AYUSO                     ;CASTILLA                  ;                       ;4.8;7.86;21
+2107;CASTILLA                      ;12;02012301        ;0000;ORIGEN                    ;DURATON                   ;                       ;24;79.7;21
+2108;DURATON                       ;12;020123          ;0103;CASTILLA                  ;PRADENA                   ;                       ;10.1;23.02;21
+2109;PRADENA                       ;12;02012303        ;0000;ORIGEN                    ;DURATON                   ;                       ;33;166.05;21
+2110;DURATON                       ;12;020123          ;0300;PRADENA                   ;DUERO                     ;                       ;63;733.2;21
+2111;DUERO                         ;12;0201            ;2325;DURATON                   ;CEGA                      ;                       ;75.6;991.15;21
+2112;CEGA                          ;12;020125          ;0001;ORIGEN                    ;PIRON                     ;                       ;103.1;1018.91;21
+2113;PIRON                         ;12;02012501        ;0002;ORIGEN                    ;MALUCAS                   ;                       ;77.4;553.82;21
+2114;MALUCAS                       ;12;0201250102      ;0000;ORIGEN                    ;PIRON                     ;                       ;34.3;197.6;21
+2115;PIRON                         ;12;02012501        ;0200;MALUCAS                   ;CEGA                      ;                       ;14.6;295.53;21
+2116;CEGA                          ;12;020125          ;0100;PIRON                     ;DUERO                     ;                       ;32.3;479.01;21
+2117;DUERO                         ;12;0201            ;2528;CEGA                      ;PISUERGA                  ;                       ;10.3;27.33;21
+2118;PISUERGA                      ;12;020128          ;0002;ORIGEN                    ;AREÑOS                    ;                       ;12.7;51.96;21
+2119;AREÑOS                        ;12;02012802        ;0002;ORIGEN                    ;LORES                     ;                       ;8.9;40.46;21
+2120;LORES                         ;12;0201280202      ;0000;ORIGEN                    ;AREÑOS                    ;                       ;10;25.67;21
+2121;AREÑOS                        ;12;02012802        ;0200;LORES                     ;PISUERGA                  ;                       ;0.7;0.55;21
+2122;PISUERGA                      ;12;020128          ;0204;AREÑOS                    ;LEBANZA                   ;                       ;1.1;2.99;21
+2123;LEBANZA                       ;12;02012804        ;0000;ORIGEN                    ;PISUERGA                  ;                       ;2.9;17.88;21
+2124;PISUERGA                      ;12;020128          ;0401;LEBANZA                   ;CASTILLERIA               ;                       ;5.7;15.94;21
+2125;CASTILLERIA                   ;12;02012801        ;0000;ORIGEN                    ;PISUERGA                  ;                       ;12.4;50.45;21
+2126;PISUERGA                      ;12;020128          ;0106;CASTILLERIA               ;RESOBA                    ;                       ;4.5;33.77;21
+2127;RESOBA                        ;12;02012806        ;0000;ORIGEN                    ;PISUERGA                  ;                       ;8.8;13.42;21
+2128;PISUERGA                      ;12;020128          ;0608;RESOBA                    ;RIVERA                    ;                       ;7.2;15.1;21
+2129;RIVERA                        ;12;02012808        ;0000;ORIGEN                    ;PISUERGA                  ;                       ;18.6;90.23;21
+2130;PISUERGA                      ;12;020128          ;0803;RIVERA                    ;CAMESA                    ;                       ;29;225.4;21
+2131;CAMESA                        ;12;02012803        ;0001;ORIGEN                    ;HOZ O LUCIO               ;                       ;38.1;276.78;21
+2132;HOZ O LUCIO                   ;12;0201280301      ;0000;ORIGEN                    ;CAMESA                    ;                       ;20;101.43;21
+2133;CAMESA                        ;12;02012803        ;0100;HOZ O LUCIO               ;PISUERGA                  ;                       ;1.2;2.93;21
+2134;PISUERGA                      ;12;020128          ;0305;CAMESA                    ;MONEGRO                   ;                       ;7.1;44.2;21
+2135;MONEGRO                       ;12;02012805        ;0000;ORIGEN                    ;PISUERGA                  ;                       ;10.8;31.73;21
+2136;PISUERGA                      ;12;020128          ;0507;MONEGRO                   ;SAUQUILLO                 ;                       ;5;22.59;21
+2137;SAUQUILLO                     ;12;02012807        ;0000;ORIGEN                    ;PISUERGA                  ;                       ;13;40.68;21
+2138;PISUERGA                      ;12;020128          ;0710;SAUQUILLO                 ;BUREJO                    ;                       ;16;84.6;21
+2139;BUREJO                        ;12;02012810        ;0001;ORIGEN                    ;PERAZANCAS                ;                       ;20.3;64.78;21
+2140;PERAZANCAS                    ;12;0201281001      ;0000;ORIGEN                    ;BUREJO                    ;                       ;13.8;63.43;21
+2141;BUREJO                        ;12;02012810        ;0102;PERAZANCAS                ;VILLAVEGA                 ;                       ;5.9;13.86;21
+2142;VILLAVEGA                     ;12;0201281002      ;0000;ORIGEN                    ;BUREJO                    ;                       ;15.4;56.44;21
+2143;BUREJO                        ;12;02012810        ;0200;VILLAVEGA                 ;PISUERGA                  ;                       ;13.9;77.6;21
+2144;PISUERGA                      ;12;020128          ;1012;BUREJO                    ;ABANADES O VALDAVIA       ;                       ;30.6;318.15;21
+2145;ABANADES O VALDAVIA           ;12;02012812        ;0001;ORIGEN                    ;CUEVAS                    ;                       ;12.3;116.23;21
+2146;CUEVAS                        ;12;0201281201      ;0000;ORIGEN                    ;ABANADES O VALDAVIA       ;                       ;12;35.86;21
+2147;ABANADES O VALDAVIA           ;12;02012812        ;0102;CUEVAS                    ;PEQUEÑO                   ;                       ;15.1;93.14;21
+2148;PEQUEÑO                       ;12;0201281202      ;0000;ORIGEN                    ;ABANADES O VALDAVIA       ;                       ;23.4;47.15;21
+2149;ABANADES O VALDAVIA           ;12;02012812        ;0203;PEQUEÑO                   ;BOEDO                     ;                       ;43.8;381.76;21
+2150;BOEDO                         ;12;0201281203      ;0000;ORIGEN                    ;ABANADES O VALDAVIA       ;                       ;66.2;341.49;21
+2151;ABANADES O VALDAVIA           ;12;02012812        ;0300;BOEDO                     ;PISUERGA                  ;                       ;9.1;42.22;21
+2152;PISUERGA                      ;12;020128          ;1209;ABANADES O VALDAVIA       ;ODRA                      ;                       ;26.7;346.04;21
+2153;ODRA                          ;12;02012809        ;0001;ORIGEN                    ;BRULLES                   ;                       ;44.6;282.97;21
+2154;BRULLES                       ;12;0201280901      ;0000;ORIGEN                    ;ODRA                      ;                       ;35.4;259.1;21
+2155;ODRA                          ;12;02012809        ;0100;BRULLES                   ;PISUERGA                  ;                       ;21.9;255.66;21
+2156;PISUERGA                      ;12;020128          ;0911;ODRA                      ;ARLANZA                   ;                       ;26.7;265.76;21
+2157;ARLANZA                       ;12;02012811        ;0001;ORIGEN                    ;ZUMEL                     ;                       ;8.7;32.19;21
+2158;ZUMEL                         ;12;0201281101      ;0000;ORIGEN                    ;ARLANZA                   ;                       ;15.5;57.53;21
+2159;ARLANZA                       ;12;02012811        ;0103;ZUMEL                     ;AVEJON                    ;                       ;8.6;56.59;21
+2160;AVEJON                        ;12;0201281103      ;0000;ORIGEN                    ;ARLANZA                   ;                       ;15.3;64.08;21
+2161;ARLANZA                       ;12;02012811        ;0305;AVEJON                    ;HACINAS                   ;                       ;26.4;159.26;21
+2162;HACINAS                       ;12;0201281105      ;0000;ORIGEN                    ;ARLANZA                   ;                       ;14;156.06;21
+2163;ARLANZA                       ;12;02012811        ;0502;HACINAS                   ;PEDROSO                   ;                       ;10.1;57.34;21
+2164;PEDROSO                       ;12;0201281102      ;0000;ORIGEN                    ;ARLANZA                   ;                       ;32.1;301.37;21
+2165;ARLANZA                       ;12;02012811        ;0204;PEDROSO                   ;CUBILLO                   ;                       ;72.1;944.12;21
+2166;CUBILLO                       ;12;0201281104      ;0000;ORIGEN                    ;ARLANZA                   ;                       ;15.2;248.56;21
+2167;ARLANZA                       ;12;02012811        ;0407;CUBILLO                   ;FRANCO                    ;                       ;8.9;61.17;21
+2168;FRANCO                        ;12;0201281107      ;0000;ORIGEN                    ;ARLANZA                   ;                       ;24.8;260.44;21
+2169;ARLANZA                       ;12;02012811        ;0706;FRANCO                    ;ARLANZON                  ;                       ;14;106.63;21
+2170;ARLANZON                      ;12;0201281106      ;0002;ORIGEN                    ;VALDECARROS               ;                       ;27.7;177.71;21
+2171;VALDECARROS                   ;12;020128110602    ;0000;ORIGEN                    ;ARLANZON                  ;                       ;7.9;18.15;21
+2172;ARLANZON                      ;12;0201281106      ;0201;VALDECARROS               ;CUEVA                     ;                       ;14.2;56.7;21
+2173;CUEVA                         ;12;020128110601    ;0000;ORIGEN                    ;ARLANZON                  ;                       ;20.8;149.17;21
+2174;ARLANZON                      ;12;0201281106      ;0104;CUEVA                     ;VENA                      ;                       ;14.1;91.1;21
+2175;VENA                          ;12;020128110604    ;0001;ORIGEN                    ;PICO                      ;                       ;32.6;151.29;21
+2176;PICO                          ;12;02012811060401  ;0000;ORIGEN                    ;VENA                      ;                       ;15.4;24.87;21
+2177;VENA                          ;12;020128110604    ;0100;PICO                      ;ARLANZON                  ;                       ;0.9;1.3;21
+2178;ARLANZON                      ;12;0201281106      ;0406;VENA                      ;UBIERNA                   ;                       ;9.1;26.66;21
+2179;UBIERNA                       ;12;020128110606    ;0000;ORIGEN                    ;ARLANZON                  ;                       ;44.6;355.09;21
+2180;ARLANZON                      ;12;0201281106      ;0603;UBIERNA                   ;CARDEÑADIJO               ;                       ;3.6;4.33;21
+2181;CARDEÑADIJO                   ;12;020128110603    ;0000;ORIGEN                    ;ARLANZON                  ;                       ;11.7;32.67;21
+2182;ARLANZON                      ;12;0201281106      ;0308;CARDEÑADIJO               ;URBEL                     ;                       ;6.9;14.8;21
+2183;URBEL                         ;12;020128110608    ;0000;ORIGEN                    ;ARLANZON                  ;                       ;51.7;325.25;21
+2184;ARLANZON                      ;12;0201281106      ;0805;URBEL                     ;AUSINES                   ;                       ;4.7;8.22;21
+2185;AUSINES                       ;12;020128110605    ;0001;ORIGEN                    ;SAELICES                  ;                       ;9.5;33.87;21
+2186;SAELICES                      ;12;02012811060501  ;0000;ORIGEN                    ;AUSINES                   ;                       ;23.8;144.04;21
+2187;AUSINES                       ;12;020128110605    ;0100;SAELICES                  ;ARLANZON                  ;                       ;14.7;68.87;21
+2188;ARLANZON                      ;12;0201281106      ;0510;AUSINES                   ;HORMAZA                   ;                       ;13.8;70.09;21
+2189;HORMAZA                       ;12;020128110610    ;0001;ORIGEN                    ;RUYALES                   ;                       ;27.3;159.97;21
+2190;RUYALES                       ;12;02012811061001  ;0000;ORIGEN                    ;HORMAZA                   ;                       ;25.8;79.08;21
+2191;HORMAZA                       ;12;020128110610    ;0100;RUYALES                   ;ARLANZON                  ;                       ;17.3;79.92;21
+2192;ARLANZON                      ;12;0201281106      ;1000;HORMAZA                   ;ARLANZA                   ;                       ;33.1;554.73;21
+2193;ARLANZA                       ;12;02012811        ;0600;ARLANZON                  ;PISUERGA                  ;                       ;18.7;201.45;21
+2194;PISUERGA                      ;12;020128          ;1114;ARLANZA                   ;CARRION                   ;                       ;39.8;471.42;21
+2195;CARRION                       ;12;02012814        ;0002;ORIGEN                    ;BESANDINO                 ;                       ;44.5;319.91;21
+2196;BESANDINO                     ;12;0201281402      ;0000;ORIGEN                    ;CARRION                   ;                       ;22.3;72.58;21
+2197;CARRION                       ;12;02012814        ;0204;BESANDINO                 ;CUEZA                     ;                       ;83.8;567.54;21
+2198;CUEZA                         ;12;0201281404      ;0000;ORIGEN                    ;CARRION                   ;                       ;39.1;412.01;21
+2199;CARRION                       ;12;02012814        ;0401;CUEZA                     ;UCIEZA                    ;                       ;24.2;129.53;21
+2200;UCIEZA                        ;12;0201281401      ;0002;ORIGEN                    ;VALDECURIADA              ;                       ;23.6;107.37;21
+2201;VALDECURIADA                  ;12;020128140102    ;0000;ORIGEN                    ;UCIEZA                    ;                       ;37.7;99.24;21
+2202;UCIEZA                        ;12;0201281401      ;0200;VALDECURIADA              ;CARRION                   ;                       ;47.4;449.44;21
+2203;CARRION                       ;12;02012814        ;0106;UCIEZA                    ;NAVA O VALDEGINATE        ;                       ;16.2;108.53;21
+2204;NAVA O VALDEGINATE            ;2;0201281406      ;0000;ORIGEN                    ;CARRION                   ;                       ;69;946.38;21
+2205;CARRION                       ;12;02012814        ;0600;NAVA O VALDEGINATE        ;PISUERGA                  ;                       ;21.5;195.87;21
+2206;PISUERGA                      ;12;020128          ;1413;CARRION                   ;ESGUEVA                   ;                       ;51.7;1127.4;21
+2207;ESGUEVA                       ;12;02012813        ;0002;ORIGEN                    ;AGUACHAL                  ;                       ;46.4;305.78;21
+2208;AGUACHAL                      ;12;0201281302      ;0000;ORIGEN                    ;ESGUEVA                   ;                       ;31.1;159.2;21
+2209;ESGUEVA                       ;12;02012813        ;0200;AGUACHAL                  ;PISUERGA                  ;                       ;75.5;532.38;21
+2210;PISUERGA                      ;12;020128          ;1300;ESGUEVA                   ;DUERO                     ;                       ;21;176.8;21
+2211;DUERO                         ;12;0201            ;2827;PISUERGA                  ;ADAJA                     ;                       ;2.4;5.91;21
+2212;ADAJA                         ;12;020127          ;0002;ORIGEN                    ;PICUEZO                   ;                       ;29.4;325.54;21
+2213;PICUEZO                       ;12;02012702        ;0000;ORIGEN                    ;ADAJA                     ;                       ;12.3;30.64;21
+2214;ADAJA                         ;12;020127          ;0201;PICUEZO                   ;AREVALILLO                ;                       ;77.6;909.02;21
+2215;AREVALILLO                    ;12;02012701        ;0000;ORIGEN                    ;ADAJA                     ;                       ;58.3;647.3;21
+2216;ADAJA                         ;12;020127          ;0104;AREVALILLO                ;ERESMA                    ;                       ;46.3;332.49;21
+2217;ERESMA                        ;12;02012704        ;0002;ORIGEN                    ;CIGÜIÑUELA                ;                       ;24.1;194.87;21
+2218;CIGÜIÑUELA                    ;12;0201270402      ;0000;ORIGEN                    ;ERESMA                    ;                       ;12.7;45.96;21
+2219;ERESMA                        ;12;02012704        ;0201;CIGÜIÑUELA                ;MILANILLO                 ;                       ;10.9;58.36;21
+2220;MILANILLO                     ;12;0201270401      ;0000;ORIGEN                    ;ERESMA                    ;                       ;25.8;205.8;21
+2221;ERESMA                        ;12;02012704        ;0103;MILANILLO                 ;MOROS                     ;                       ;18.2;132.46;21
+2222;MOROS                         ;12;0201270403      ;0001;ORIGEN                    ;CHICO                     ;                       ;36.4;309.33;21
+2223;CHICO                         ;12;020127040301    ;0000;ORIGEN                    ;MOROS                     ;                       ;18;83.57;21
+2224;MOROS                         ;12;0201270403      ;0103;CHICO                     ;ZORITA                    ;                       ;10.7;45.19;21
+2225;ZORITA                        ;12;020127040303    ;0000;ORIGEN                    ;MOROS                     ;                       ;16.6;139.11;21
+2226;MOROS                         ;12;0201270403      ;0300;ZORITA                    ;ERESMA                    ;                       ;16.8;112.93;21
+2227;ERESMA                        ;12;02012704        ;0305;MOROS                     ;VOLTOYA                   ;                       ;38.8;188.63;21
+2228;VOLTOYA                       ;12;0201270405      ;0000;ORIGEN                    ;ERESMA                    ;                       ;97.9;1023.18;21
+2229;ERESMA                        ;12;02012704        ;0500;VOLTOYA                   ;ADAJA                     ;                       ;37;412.66;21
+2230;ADAJA                         ;12;020127          ;0400;ERESMA                    ;DUERO                     ;                       ;15.7;106.18;21
+2231;DUERO                         ;12;0201            ;2729;ADAJA                     ;ZAPARDIEL                 ;                       ;18.6;379;21
+2232;ZAPARDIEL                     ;12;020129          ;0000;ORIGEN                    ;DUERO                     ;                       ;102.4;1455.89;21
+2233;DUERO                         ;12;0201            ;2931;ZAPARDIEL                 ;TRABANCOS                 ;                       ;15.8;188.07;21
+2234;TRABANCOS                     ;12;020131          ;0001;ORIGEN                    ;REGAMON                   ;                       ;34.6;147.63;21
+2235;REGAMON                       ;12;02013101        ;0000;ORIGEN                    ;TRABANCOS                 ;                       ;28.7;129.09;21
+2236;TRABANCOS                     ;12;020131          ;0100;REGAMON                   ;DUERO                     ;                       ;49.8;438.01;21
+2237;DUERO                         ;12;0201            ;3130;TRABANCOS                 ;BAJOZ                     ;                       ;27.1;288.35;21
+2238;BAJOZ                         ;12;020130          ;0001;ORIGEN                    ;HORNIJA                   ;                       ;40.3;436.7;21
+2239;HORNIJA                       ;12;02013001        ;0000;ORIGEN                    ;BAJOZ                     ;                       ;58.6;643.29;21
+2240;BAJOZ                         ;12;020130          ;0100;HORNIJA                   ;DUERO                     ;                       ;2.7;3.68;21
+2241;DUERO                         ;12;0201            ;3033;BAJOZ                     ;GUAREÑA                   ;                       ;3.6;34.52;21
+2242;GUAREÑA                       ;12;020133          ;0002;ORIGEN                    ;MAZORES                   ;                       ;17.7;202.54;21
+2243;MAZORES                       ;12;02013302        ;0001;ORIGEN                    ;POVEDA                    ;                       ;25.5;119.49;21
+2244;POVEDA                        ;12;0201330201      ;0000;ORIGEN                    ;MAZORES                   ;                       ;18.5;204.29;21
+2245;MAZORES                       ;12;02013302        ;0100;POVEDA                    ;GUAREÑA                   ;                       ;4.3;27.54;21
+2246;GUAREÑA                       ;12;020133          ;0200;MAZORES                   ;DUERO                     ;                       ;44.9;517.06;21
+2247;DUERO                         ;12;0201            ;3332;GUAREÑA                   ;VALDERADUEY               ;                       ;41.1;869.31;21
+2248;VALDERADUEY                   ;12;020132          ;0001;ORIGEN                    ;AHOGABORRICOS             ;                       ;98.1;796.18;21
+2249;AHOGABORRICOS                 ;12;02013201        ;0000;ORIGEN                    ;VALDERADUEY               ;                       ;50.1;292.82;21
+2250;VALDERADUEY                   ;12;020132          ;0103;AHOGABORRICOS             ;SEQUILLO                  ;                       ;21.5;275.8;21
+2251;SEQUILLO                      ;12;02013203        ;0001;ORIGEN                    ;SANTA MARIA               ;                       ;14.1;51.73;21
+2252;SANTA MARIA                   ;12;0201320301      ;0000;ORIGEN                    ;SEQUILLO                  ;                       ;9.9;47.82;21
+2253;SEQUILLO                      ;12;02013203        ;0103;SANTA MARIA               ;AGUIJON                   ;                       ;41.1;428.56;21
+2254;AGUIJON                       ;12;0201320303      ;0000;ORIGEN                    ;SEQUILLO                  ;                       ;28.5;245.42;21
+2255;SEQUILLO                      ;12;02013203        ;0300;AGUIJON                   ;VALDERADUEY               ;                       ;58.2;728.13;21
+2256;VALDERADUEY                   ;12;020132          ;0302;SEQUILLO                  ;SALADO                    ;                       ;29;242.26;21
+2257;SALADO                        ;12;02013202        ;0000;ORIGEN                    ;VALDERADUEY               ;                       ;39.3;379.68;21
+2258;VALDERADUEY                   ;12;020132          ;0200;SALADO                    ;DUERO                     ;                       ;10.5;77.9;21
+2259;DUERO                         ;12;0201            ;3234;VALDERADUEY               ;ESLA                      ;                       ;48.7;792.75;21
+2260;ESLA                          ;12;020134          ;0001;ORIGEN                    ;YUSO                      ;                       ;25.4;264.6;21
+2261;YUSO                          ;12;02013401        ;0000;ORIGEN                    ;ESLA                      ;                       ;30.6;288.3;21
+2262;ESLA                          ;12;020134          ;0102;YUSO                      ;PORMA                     ;                       ;88.1;817.51;21
+2263;PORMA                         ;12;02013402        ;0002;ORIGEN                    ;ISOBA                     ;                       ;6;23.91;21
+2264;ISOBA                         ;12;0201340202      ;0000;ORIGEN                    ;PORMA                     ;                       ;11;34.63;21
+2265;PORMA                         ;12;02013402        ;0204;ISOBA                     ;CURUEÑO                   ;                       ;45.7;466.12;21
+2266;CURUEÑO                       ;12;0201340204      ;0000;ORIGEN                    ;PORMA                     ;                       ;47.6;283.97;21
+2267;PORMA                         ;12;02013402        ;0401;CURUEÑO                   ;MORO                      ;                       ;23.6;217.47;21
+2268;MORO                          ;12;0201340201      ;0000;ORIGEN                    ;PORMA                     ;                       ;23.4;61.82;21
+2269;PORMA                         ;12;02013402        ;0100;MORO                      ;ESLA                      ;                       ;7.4;54.2;21
+2270;ESLA                          ;12;020134          ;0204;PORMA                     ;BERNESGA                  ;                       ;5.1;17.19;21
+2271;BERNESGA                      ;12;02013404        ;0002;ORIGEN                    ;RODIEZMO                  ;                       ;14.6;90.37;21
+2272;RODIEZMO                      ;12;0201340402      ;0000;ORIGEN                    ;BERNESGA                  ;                       ;13.5;40.23;21
+2273;BERNESGA                      ;12;02013404        ;0204;RODIEZMO                  ;CASARES                   ;                       ;13.5;62.33;21
+2274;CASARES                       ;12;0201340404      ;0000;ORIGEN                    ;BERNESGA                  ;                       ;20;98;21
+2275;BERNESGA                      ;12;02013404        ;0401;CASARES                   ;TORIO                     ;                       ;40.4;333.54;21
+2276;TORIO                         ;12;0201340401      ;0002;ORIGEN                    ;RIOSEQUILLO               ;                       ;51.8;373.55;21
+2277;RIOSEQUILLO                   ;12;020134040102    ;0000;ORIGEN                    ;TORIO                     ;                       ;15.8;45.5;21
+2278;TORIO                         ;12;0201340401      ;0200;RIOSEQUILLO               ;BERNESGA                  ;                       ;12.1;69.13;21
+2279;BERNESGA                      ;12;02013404        ;0100;TORIO                     ;ESLA                      ;                       ;14;39.65;21
+2280;ESLA                          ;12;020134          ;0403;BERNESGA                  ;CEA                       ;                       ;68.6;1047.89;21
+2281;CEA                           ;12;02013403        ;0001;ORIGEN                    ;CAMBA                     ;                       ;47.8;432.16;21
+2282;CAMBA                         ;12;0201340301      ;0000;ORIGEN                    ;CEA                       ;                       ;21.2;35.12;21
+2283;CEA                           ;12;02013403        ;0100;CAMBA                     ;ESLA                      ;                       ;118.1;1549.79;21
+2284;ESLA                          ;12;020134          ;0306;CEA                       ;ORBIGO                    ;                       ;9;67.66;21
+2285;LUNA                          ;12;02013406        ;0001;ORIGEN                    ;TORRE                     ;                       ;55.3;581.92;21
+2286;TORRE                         ;12;0201340601      ;0000;ORIGEN                    ;LUNA                      ;                       ;12.5;51.37;21
+2287;LUNA                          ;12;02013406        ;0102;TORRE                     ;OMAÑAS                    ;                       ;17.6;116.6;21
+2288;OMAÑAS                        ;12;0201340602      ;0002;ORIGEN                    ;VALLEGORDO                ;                       ;22.3;106.48;21
+2289;VALLEGORDO                    ;12;020134060202    ;0000;ORIGEN                    ;OMAÑAS                    ;                       ;15.3;78.83;21
+2290;OMAÑAS                        ;12;0201340602      ;0200;VALLEGORDO                ;ORBIGO                    ;                       ;32.9;329.27;21
+2291;ORBIGO                        ;12;02013406        ;0204;OMAÑAS                    ;TUERTO                    ;                       ;48.3;575.79;21
+2292;TUERTO                        ;12;0201340604      ;0002;ORIGEN                    ;PORQUERA                  ;                       ;31.5;183.86;21
+2293;PORQUERA                      ;12;020134060402    ;0002;ORIGEN                    ;COMBARROS                 ;                       ;25.9;169.87;21
+2294;COMBARROS                     ;12;02013406040202  ;0000;ORIGEN                    ;PORQUERA                  ;                       ;17.5;32.95;21
+2295;PORQUERA                      ;12;020134060402    ;0200;COMBARROS                 ;TUERTO                    ;                       ;1.2;0.79;21
+2296;TUERTO                        ;12;0201340604      ;0204;PORQUERA                  ;JERGA                     ;                       ;10.9;101.66;21
+2297;JERGA                         ;12;020134060404    ;0000;ORIGEN                    ;TUERTO                    ;                       ;27.4;84.92;21
+2298;TUERTO                        ;12;0201340604      ;0406;JERGA                     ;TURIENZO                  ;                       ;1.3;1.25;21
+2299;TURIENZO                      ;12;020134060406    ;0000;ORIGEN                    ;TUERTO                    ;                       ;39.1;194.87;21
+2300;TUERTO                        ;12;0201340604      ;0608;TURIENZO                  ;DUERNA                    ;                       ;19.5;303.52;21
+2301;DUERNA                        ;12;020134060408    ;0000;ORIGEN                    ;TUERTO                    ;                       ;56.7;302.41;21
+2302;TUERTO                        ;12;0201340604      ;0800;DUERNA                    ;ORBIGO                    ;                       ;2.7;5.26;21
+2303;ORBIGO                        ;12;02013406        ;0406;TUERTO                    ;JAMUZ                     ;                       ;20.4;230.2;21
+2304;JAMUZ                         ;12;0201340606      ;0001;ORIGEN                    ;VALTABUYO                 ;                       ;27.2;74.27;21
+2305;VALTABUYO                     ;12;020134060601    ;0000;ORIGEN                    ;JAMUZ                     ;                       ;28.1;88.8;21
+2306;JAMUZ                         ;12;0201340606      ;0100;VALTABUYO                 ;ORBIGO                    ;                       ;22;144.1;21
+2307;ORBIGO                        ;12;02013406        ;0608;JAMUZ                     ;ERIA                      ;                       ;23.5;508.6;21
+2308;ERIA                          ;12;0201340608      ;0000;ORIGEN                    ;ORBIGO                    ;                       ;98.9;656.52;21
+2309;ORBIGO                        ;12;02013406        ;0800;ERIA                      ;ESLA                      ;                       ;16.6;102.88;21
+2310;ESLA                          ;12;020134          ;0608;ORBIGO                    ;TERA                      ;                       ;12.5;66.36;21
+2311;TERA                          ;12;02013408        ;0002;ORIGEN                    ;CASTRO                    ;                       ;39.5;304.04;21
+2312;CASTRO                        ;12;0201340802      ;0000;ORIGEN                    ;TERA                      ;                       ;24.3;121.19;21
+2313;TERA                          ;12;02013408        ;0201;CASTRO                    ;NEGRO                     ;                       ;50.9;473.49;21
+2314;NEGRO                         ;12;0201340801      ;0000;ORIGEN                    ;TERA                      ;                       ;55.1;421.89;21
+2315;TERA                          ;12;02013408        ;0104;NEGRO                     ;CASTRON                   ;                       ;47.9;839.08;21
+2316;CASTRON                       ;12;0201340804      ;0000;ORIGEN                    ;TERA                      ;                       ;42.1;203.59;21
+2317;TERA                          ;12;02013408        ;0400;CASTRON                   ;ESLA                      ;                       ;7.2;69.11;21
+2318;ESLA                          ;12;020134          ;0810;TERA                      ;ALISTE                    ;                       ;59.8;978.58;21
+2319;ALISTE                        ;12;02013410        ;0002;ORIGEN                    ;MENA                      ;                       ;31.2;228.71;21
+2320;MENA                          ;12;0201341002      ;0000;ORIGEN                    ;ALISTE                    ;                       ;20.1;90.78;21
+2321;ALISTE                        ;12;02013410        ;0200;MENA                      ;ESLA                      ;                       ;42.7;337.09;21
+2322;ESLA                          ;12;020134          ;1000;ALISTE                    ;DUERO                     ;                       ;18.5;159.52;21
+2323;DUERO                         ;12;0201            ;3435;ESLA                      ;TORMES                    ;                       ;77.8;469.97;21
+2324;TORMES                        ;12;020135          ;0001;ORIGEN                    ;ARAVALLE                  ;                       ;43;620.67;21
+2325;ARAVALLE                      ;12;02013501        ;0000;ORIGEN                    ;TORMES                    ;                       ;14.4;138.54;21
+2326;TORMES                        ;12;020135          ;0103;ARAVALLE                  ;BECEDILLAS                ;                       ;10.1;140;21
+2327;BECEDILLAS                    ;12;02013503        ;0000;ORIGEN                    ;TORMES                    ;                       ;22.2;91.67;21
+2328;TORMES                        ;12;020135          ;0302;BECEDILLAS                ;CORNEJA                   ;                       ;5.1;24.55;21
+2329;CORNEJA                       ;12;02013502        ;0000;ORIGEN                    ;TORMES                    ;                       ;42;395.71;21
+2330;TORMES                        ;12;020135          ;0205;CORNEJA                   ;ALHANDIGA                 ;                       ;40;458.82;21
+2331;ALHANDIGA                     ;12;02013505        ;0000;ORIGEN                    ;TORMES                    ;                       ;11.7;297.01;21
+2332;TORMES                        ;12;020135          ;0504;ALHANDIGA                 ;ALMAR                     ;                       ;26.9;531.96;21
+2333;ALMAR                         ;12;02013504        ;0001;ALMAR                     ;MARGAÑAN                  ;                       ;68.2;475.42;21
+2334;MARGAÑAN                      ;12;0201350401      ;0000;ORIGEN                    ;ALMAR                     ;                       ;57.6;285.46;21
+2335;ALMAR                         ;12;02013504        ;0103;MARGAÑAN                  ;GAMO                      ;                       ;4.7;10.46;21
+2336;GAMO                          ;12;0201350403      ;0001;ORIGEN                    ;GUDIN                     ;                       ;36;185.25;21
+2337;GUDIN                         ;12;020135040301    ;0000;ORIGEN                    ;GAMO                      ;                       ;25.8;68.57;21
+2338;GAMO                          ;12;0201350403      ;0100;GUDIN                     ;ALMAR                     ;                       ;20.7;89.83;21
+2339;ALMAR                         ;12;02013504        ;0300;GAMO                      ;TORMES                    ;                       ;2;2.24;21
+2340;TORMES                        ;12;020135          ;0400;ALMAR                     ;DUERO                     ;                       ;128;3330.33;21
+2341;DUERO                         ;12;0201            ;3537;TORMES                    ;UCES                      ;                       ;14.2;34.96;21
+2342;UCES                          ;12;020137          ;0000;ORIGEN                    ;DUERO                     ;                       ;31.6;675.39;21
+2343;DUERO                         ;12;0201            ;3739;UCES                      ;HUEBRA                    ;                       ;40.6;166.01;21
+2344;HUEBRA                        ;12;020139          ;0002;ORIGEN                    ;OBLEA                     ;                       ;60.7;814.79;21
+2345;OBLEA                         ;12;02013902        ;0000;ORIGEN                    ;HUEBRA                    ;                       ;14.2;142.59;21
+2346;HUEBRA                        ;12;020139          ;0201;OBLEA                     ;YELTES                    ;                       ;32.5;409.05;21
+2347;YELTES                        ;12;02013901        ;0001;ORIGEN                    ;MORASVERDES               ;                       ;26.2;197.16;21
+2348;MORASVERDES                   ;12;0201390101      ;0000;ORIGEN                    ;YELTES                    ;                       ;23.4;90.92;21
+2349;YELTES                        ;12;02013901        ;0103;MORASVERDES               ;GAVILANES                 ;                       ;16.2;221.13;21
+2350;GAVILANES                     ;12;0201390103      ;0002;ORIGEN                    ;TENEBRILLA                ;                       ;12;62.1;21
+2351;TENEBRILLA                    ;12;020139010302    ;0000;ORIGEN                    ;GAVILANES                 ;                       ;26;65.63;21
+2352;GAVILANES                     ;12;0201390103      ;0200;TENEBRILLA                ;YELTES                    ;                       ;13.3;107.59;21
+2353;YELTES                        ;12;02013901        ;0300;GAVILANES                 ;HUEBRA                    ;                       ;28.2;235.82;21
+2354;HUEBRA                        ;12;020139          ;0103;YELTES                    ;CAMACES                   ;                       ;30.3;257.18;21
+2355;CAMACES                       ;12;02013903        ;0000;ORIGEN                    ;HUEBRA                    ;                       ;49.4;273.72;21
+2356;HUEBRA                        ;12;020139          ;0300;CAMACES                   ;DUERO                     ;                       ;5.9;11.3;21
+2357;DUERO                         ;12;0201            ;3941;HUEBRA                    ;AGUEDA                    ;                       ;11;87.85;21
+2358;AGUEDA                        ;12;020141          ;0002;ORIGEN                    ;RIOFRIO                   ;                       ;22;136.4;21
+2359;RIOFRIO                       ;12;02014102        ;0001;ORIGEN                    ;PEROSIN                   ;                       ;12.3;41.69;21
+2360;PEROSIN                       ;12;0201410201      ;0000;ORIGEN                    ;RIOFRIO                   ;                       ;13.4;46.02;21
+2361;RIOFRIO                       ;12;02014102        ;0100;PEROSIN                   ;AGUEDA                    ;                       ;5.5;19.63;21
+2362;AGUEDA                        ;12;020141          ;0204;RIOFRIO                   ;MAYAS                     ;                       ;13.7;88.47;21
+2363;MAYAS                         ;12;02014104        ;0000;ORIGEN                    ;AGUEDA                    ;                       ;20.2;116.95;21
+2364;AGUEDA                        ;12;020141          ;0406;MAYAS                     ;AGADONES                  ;                       ;8;55.38;21
+2365;AGADONES                      ;12;02014106        ;0000;ORIGEN                    ;AGUEDA                    ;                       ;16;46.54;21
+2366;AGUEDA                        ;12;020141          ;0608;AGADONES                  ;BURGUILLO                 ;                       ;3.9;15.23;21
+2367;BURGUILLO                     ;12;02014108        ;0000;ORIGEN                    ;AGUEDA                    ;                       ;18.7;41.71;21
+2368;AGUEDA                        ;12;020141          ;0810;BURGUILLO                 ;AGADON                    ;                       ;0.9;0.5;21
+2369;AGADON                        ;12;02014110        ;0000;ORIGEN                    ;AGUEDA                    ;                       ;32.3;177.44;21
+2370;AGUEDA                        ;12;020141          ;1001;AGADON                    ;AZABA                     ;                       ;26.8;397.76;21
+2371;AZABA                         ;13;02014101        ;0000;ORIGEN                    ;AGUEDA                    ;                       ;37.1;315.66;21
+2372;AGUEDA                        ;12;020141          ;0103;AZABA                     ;TURONES                   ;                       ;38.8;498.09;21
+2373;TURONES                       ;12;02014103        ;0002;ORIGEN                    ;DOS CASAS                 ;                       ;23.6;22.72;21
+2374;DOS CASAS                     ;13;0201410302      ;0000;ORIGEN                    ;TURONES                   ;                       ;30.3;213.05;21
+2375;TURONES                       ;12;02014103        ;0200;DOS CASAS                 ;AGUEDA                    ;                       ;1.8;0.51;21
+2376;AGUEDA                        ;12;020141          ;0312;TURONES                   ;MORGAEZ                   ;                       ;11.8;35.79;21
+2377;MORGAEZ                       ;12;02014112        ;0000;ORIGEN                    ;AGUEDA                    ;                       ;21.5;59.03;21
+2378;AGUEDA                        ;12;020141          ;1200;MORGAEZ                   ;DUERO                     ;                       ;12.4;26.54;21
+2379;CALABOR                       ;12;020136          ;0088;ORIGEN                    ;FRONTERA                  ;                       ;8.9;108.66;21
+2380;MANZANAS                      ;12;02013601        ;0088;ORIGEN                    ;FRONTERA                  ;                       ;42.4;504.18;21
+2381;TUELA                         ;12;020138          ;0088;ORIGEN                    ;FRONTERA                  ;                       ;28.7;212.68;21
+2382;TUELA                         ;6;0288            ;0001;FRONTERA                  ;RABACAL                   ;VIERTE A PORTUGAL      ;0;68.02;21
+2383;RABACAL                       ;12;02013802        ;0088;ORIGEN                    ;FRONTERA                  ;                       ;18.1;167.44;21
+2384;MENTE                         ;12;0201380202      ;0088;ORIGEN                    ;FRONTERA                  ;                       ;27.3;113.79;21
+2385;ARZOA                         ;12;020138020202    ;0088;ORIGEN                    ;FRONTERA                  ;                       ;16;122.33;21
+2386;TAMEGA                        ;12;020140          ;0002;ORIGEN                    ;BUBAL                     ;                       ;33.5;271.71;21
+2387;BUBAL                         ;12;02014002        ;0000;ORIGEN                    ;TAMEGA                    ;                       ;16.6;229.59;21
+2388;TAMEGA                        ;12;020140          ;0288;BUBAL                     ;FRONTERA                  ;                       ;15.2;177.19;21
+2966;ORZA                          ;12;;;ORIGEN                    ;ESLA                      ;SIN CLASIFICAR         ;0;0;21
+2967;REMOLINA                      ;12;;;ORIGEN                    ;ESLA                      ;SIN CLASIFICAR         ;;0;21
+2968;DUEÑAS                        ;12;;;ORIGEN                    ;ESLA                      ;SIN CLASIFICAR         ;0;0;21
+2969;REGATO                        ;12;;;ORIGEN                    ;TERA                      ;;;0;21
+2970;VALDEMASARIO                  ;2;;;;;SIN CLASIFICAR         ;;0;21
+2971;PEQUEÑINO                     ;2;;;;;SIN CLASIFICAR         ;;0;21
+2972;FUENTE MILDEDOS               ;2;;;;;SIN CLASIFICAR         ;;0;21
+2973;CUBILLO                       ;2;;;;;SIN CLASIFICAR         ;;0;21
+2974;SALGUIRAL                     ;12;;;;;SIN CLASIFICAR         ;;0;21
+2975;PORQUERO                      ;12;;;;;SIN CLASIFICAR         ;;0;21
+2976;REITOBAS                      ;12;;;;;SIN CLASIFICAR         ;;0;21
+2977;CEGUILLA                      ;12;;;;;SIN CLASIFICAR         ;;0;21
+2978;HUERTA, LA                    ;2;;;;;SIN CLASIFICAR         ;;0;21
+2979;TEJONERAS, LAS                ;2;;;;;SIN CLASIFICAR         ;;0;21
+2980;MAGDALENA, LA                 ;2;;;;;SIN CLASIFICAR         ;;0;21
+2981;GAMONAL                       ;2;;;;;SIN CLASIFICAR         ;;0;21
+2982;POTRILLOS                     ;2;;;;;SIN CLASIFICAR         ;;0;21
+2983;NAVA                          ;2;;;;;SIN CLASIFICAR         ;;0;21
+2984;MADEROS                       ;2;;;;;SIN CLASIFICAR         ;;0;21
+2985;MALILLO                       ;2;;;;;SIN CLASIFICAR         ;;0;21
+2986;PECES                         ;12;;;;;SIN CLASIFICAR         ;;0;21
+2987;ENDRINAL, EL                  ;5;;;;;SIN CLASIFICAR         ;;0;21
+2988;RIOLOBOS                      ;12;;;;;SIN CLASIFICAR         ;;0;21
+2989;SENTIL                        ;12;;;;;SIN CLASIFICAR         ;;0;21
+2990;VALDESPINA                    ;2;;;;;SIN CLASIFICAR         ;;0;21
+2991;VALLEJO                       ;2;;;;;SIN CLASIFICAR         ;;0;21
+2992;RIBERA                        ;2;;;;;SIN CLASIFICAR         ;;0;21
+2993;MATENOSO                      ;12;;;;;SIN CLASIFICAR         ;;0;21
+2994;CARDENA                       ;12;;;;;SIN CLASIFICAR         ;;0;21
+2995;ALMUCERA                      ;12;;;;;SIN CLASIFICAR         ;0;0;21
+2996;FRIO                          ;12;;;;;SIN CLASIFICAR         ;0;0;21
+2997;SEGUNDERA                     ;12;;;;;SIN CLASIFICAR         ;0;0;21
+2998;TRIMONTE DE LA DEHESA         ;12;;;;;SIN CLASIFICAR         ;0;0;21
+2999;JARAMIEL                      ;12;;;;;SIN CLASIFICAR         ;0;0;21
