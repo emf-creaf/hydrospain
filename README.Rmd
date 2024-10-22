@@ -36,7 +36,7 @@ This is a basic example which shows you how to download daily data from river ga
 ```{r example1}
 library(cehAforos)
 # Use verbose = TRUE (default) if you want to track progress.
-# x <- read_cedex_basin(table = "afliq", basin = "ebro", verbose = FALSE)
+x <- get_ceh_data(table = "afliq", basin = "ebro", verbose = FALSE)
 ```
 
 <br>

@@ -37,14 +37,14 @@
 #' @examples
 #' # Read afliq.csv data
 #' x <- read_ceh_basin(table = "afliq)
-get_ceh_data <- function(table = "estaf", basin = "all", sf = TRUE, crs = "utm30", verbose = TRUE) {
+get_ceh_data <- function(table_name = "estaf", basin = "all", sf = TRUE, crs = "utm30", verbose = TRUE) {
 
 
   # Check 'table'.
-  stopifnot("Input 'table' must be a single string" = is.character(table) & length(table) == 1)
-  table <- tolower(table)
+  stopifnot("Input 'table_name' must be a single string" = is.character(table_name) & length(table_name) == 1)
+  table_name <- tolower(table_name)
   z <- c("afliq", "mensual_a", "estaf")
-  stopifnot("Wrong 'table' value" = any(table %in% z))
+  stopifnot("Wrong 'table_name' value" = any(table_name %in% z))
   
   
   # Check basin names.
@@ -66,9 +66,9 @@ get_ceh_data <- function(table = "estaf", basin = "all", sf = TRUE, crs = "utm30
   
   # Get the full URL for files and check them out.
   url <- "https://ceh-flumen64.cedex.es/anuarioaforos//anuario-2020-2021/"
-  url_files <- check_url_files(url, basin, table, verbose)
+  url_files <- check_url_files(url, basin, table_name, verbose)
 
-  if (table %in% c("afliq", "afliqi", "anual_a", "estadis_a", "extremos_a", "extremos_a_v", "mensual_a", "mensual_a_v")) {
+  if (table_name %in% c("afliq", "afliqi", "anual_a", "estadis_a", "extremos_a", "extremos_a_v", "mensual_a", "mensual_a_v")) {
     if (table != "estaf") {
       url_estaf <- check_url_files(url, basin, "estaf", verbose)
     } else {
@@ -81,6 +81,7 @@ get_ceh_data <- function(table = "estaf", basin = "all", sf = TRUE, crs = "utm30
     if (table %in% c("afliq", "afliqi", "anual_a", "estadis_a", "estaf", "extremos_a", "extremos_a_v", "mensual_a", "mensual_a_v")) {
     
     } else if (table %in% c("***")) {
+    }
     
   }
 
