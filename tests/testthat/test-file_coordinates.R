@@ -6,7 +6,7 @@ test_that("Test files", {
          "mensual_a_v", "mensual_c", "mensual_e", "muni", "prov")
   
   setwd("..\\..")
-  expect_identical(f, file_coordinates())
+  expect_identical(f, file_coordinates()$file)
   
   
 })
