@@ -1,21 +1,28 @@
 #' Title
 #'
 #' @param x 
-#' @param first_day numeric \code{vector} containing the day number(s) that will be used when
+#' @param first_day numeric or character \code{vector} containing the day number(s) that will be used when
 #' building the \code{date} object.
 #'
 #' @return
+#' A \code{Date} object.
+#' 
 #' @details
 #' For February \code{first_day} must be 29 in non-leap years, and 28 on leap years.
 #' 
-#'
 #' @examples
+#' # Same result.
+#' x <- anomes_to_date("199201")
+#' y <- anomes_to_date(199201)
+
+
 anomes_to_date <- function(dat, first_day = 1) {
   
 
   # Checks.
-  stopifnot("Input 'dat' must be a numeric vector" = is.numeric(dat) & is.vector(dat))
-  stopifnot("Strings in 'dat' must be of 6-character length" = all(nchar(dat) == 6))
+  stopifnot("Input 'dat' must be a vector" = is.vector(dat))
+  if (is.character(dat)) dat <- as.numeric(dat)
+  stopifnot("Strings/Numbers in 'dat' must have 6 digits" = all(nchar(dat) == 6))
   stopifnot("Input 'first_day' cannot be larger than 31 or smaller than 1" = all(first_day <= 31 & first_day > 0))
   ndat <- length(dat)
   if (length(first_day) > 1) {

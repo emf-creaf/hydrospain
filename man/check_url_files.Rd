@@ -4,14 +4,18 @@
 \alias{check_url_files}
 \title{Check URLs and return full http addresses.}
 \usage{
-check_url_files(url, basin, table, verbose)
+check_url_files(url, basin_names, file_name, sf, verbose)
 }
 \arguments{
 \item{url}{a valid URL.}
 
-\item{basin}{a character vector containing the names of the basins to download the data for.}
+\item{basin_names}{its correctness is not checked.}
 
-\item{table}{a character string indicating which table to download.}
+\item{file_name}{}
+
+\item{sf}{}
+
+\item{verbose}{}
 }
 \value{
 Full url for files.

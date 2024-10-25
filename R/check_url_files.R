@@ -78,7 +78,10 @@ check_url_files <- function(url, basin_names, file_name, sf, verbose) {
   
   df <- data.frame(files = url_files)
   if (sf) df <- data.frame(df, coords = url_coords)
-  if (verbose) cli::cli_progress_update()
+  if (verbose) {
+    cli::cli_progress_update()
+    cli::cli_end()
+  }
   
   
   return(df)

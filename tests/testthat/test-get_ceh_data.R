@@ -14,8 +14,8 @@ test_that("gauging station data", {
   expect_error(get_ceh_data(table_name = "xx", basin_names = "duero", sf = TRUE, verbose = FALSE))
   expect_error(get_ceh_data(table_name = "xx", basin_names = "xx", sf = TRUE, verbose = FALSE))
 
-  
-  
-  
-  
+  # No need for coordinates.
+  expect_no_condition(get_ceh_data("hojas50", basin_names = "guadalquivir", verbose = FALSE))
+
 })
+

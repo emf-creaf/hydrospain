@@ -2,48 +2,49 @@
 % Please edit documentation in R/get_ceh_data.R
 \name{get_ceh_data}
 \alias{get_ceh_data}
-\title{Read Spanish basin data from the \emph{cedex} site.}
+\title{Read data from gauging stations of most largest Spanish rivers}
 \usage{
 get_ceh_data(
-  table = "estaf",
-  basin = "all",
+  table_name = "estaf",
+  basin_names = NULL,
   sf = TRUE,
-  crs = "utm30",
+  convert_to_date = TRUE,
   verbose = TRUE
 )
 }
 \arguments{
-\item{table}{\code{character} with the name of the file to retrieve from the
-\emph{cedex} site, without extension. If not given, the default value is "estaf".}
+\item{table_name}{\code{character} with the name of the file to retrieve from the
+\emph{CEDEX} site, without extension. If not given, the default value is "estaf".}
 
-\item{basin}{}
+\item{basin_names}{\code{character} with the name of the basins to retrieve
+\code{table_name} names for. Default is to retrieve data for all basins on the \emph{CEDEX} web site.}
 
-\item{sf}{logical, if TRUE \code{read_ceh_basin} returns a \code{sf} spatial object.}
+\item{sf}{logical, if TRUE (default), \code{get_ceh_data} returns a \code{sf} spatial object.
+Coordinate system is always \code{EPSG:32630}, which corresponds to WGS84 / UTM zone 30N.}
 
-\item{crs}{\code{character} indicating the coordinate system of choice. Values can be
-"UTM", "UTM30" (default), "WGS84", "ED50" or "ETRS89" in lower or upper case letters (e.g. "wgs84" is valid,
-as is "Wgs84").}
+\item{verbose}{\code{logical}, if set to TRUE progress bars are printed on screen.}
 
-\item{verbose}{\code{logical}, if set to TRUE progress messages are printed on screen.}
+\item{anomes_to_date}{}
 }
 \value{
 A spatial \code{sf} object with a EPSG coordinate reference system (unless cs = "utm").
 }
 \description{
-\code{read_ceh_basin} retrieves time series datasets and statistics for
-several Spanish basins from the Centro de Estudios y Experimentación
-de Obras Públicas (CEDEX).
+\code{get_ceh_data} retrieves time series datasets and statistics for
+several Spanish basins from the Centro de Estudios Hidrológicos (CEX) of
+the Centro de Estudios y Experimentación de Obras Públicas (CEDEX).
 }
 \details{
 To see a description of the files to retrieve see
 "https://ceh.cedex.es/anuarioaforos/demarcaciones.asp" and go to the basin you want
 to get data for.
-Regarding coordinates, crs = "UTM" indicates local UTM coordinates, which may be a problem
-if the sites are located on both sides of the UTM demarcation line, so we do not recommend it.
-crs = "UTM30" actually means Mercator UTM 30 North with datum WGS84, whereas ETRS89 implies
-Mercator UTM 30 with datum ETRS89. Finally, crs = "ED50" and "WGS84" are longitude-latitude
-system with those datums.
 
-The \code{encoding} argument of the \code{read.csv2} function is set to "latin1" in order to
-correctly read diacritics and tildes.
+The coordinate reference system of the resulting \code{sf} object is \code{UTM 30N} always.
+There are coordinates in other systems in the original CEDEX files but they are not used
+(although they are also retrieved and included in the output object).
+}
+\examples{
+# Read afliq.csv data.
+x <- get_ceh_data(table_name = "afliq")
+
 }

@@ -1,20 +1,21 @@
-#' Read Spanish basin data from the *cedex* site.
-#'
+#' Read data from gauging stations of most largest Spanish rivers
+#' 
 #' @description
-#' \code{read_ceh_basin} retrieves time series datasets and statistics for
-#' several Spanish basins from the Centro de Estudios y Experimentación
-#' de Obras Públicas (CEDEX).
+#' \code{get_ceh_data} retrieves time series datasets and statistics for
+#' several Spanish basins from the Centro de Estudios Hidrológicos (CEX) of
+#' the Centro de Estudios y Experimentación de Obras Públicas (CEDEX).
 #'
+#' @param table_name \code{character} with the name of the file to retrieve from the
+#' *CEDEX* site, without extension. If not given, the default value is "estaf".
+#' 
+#' @param basin_names \code{character} with the name of the basins to retrieve 
+#' \code{table_name} names for. Default is to retrieve data for all basins on the *CEDEX* web site.
 #'
-#' @param table \code{character} with the name of the file to retrieve from the
-#' *cedex* site, without extension. If not given, the default value is "estaf".
-
-#' @param verbose \code{logical}, if set to TRUE progress messages are printed on screen.
-#' @param basin 
-#' @param sf logical, if TRUE \code{read_ceh_basin} returns a \code{sf} spatial object.
-#' @param crs \code{character} indicating the coordinate system of choice. Values can be
-#' "UTM", "UTM30" (default), "WGS84", "ED50" or "ETRS89" in lower or upper case letters (e.g. "wgs84" is valid,
-#' as is "Wgs84").
+#' @param sf logical, if TRUE (default), \code{get_ceh_data} returns a \code{sf} spatial object.
+#' Coordinate system is always \code{EPSG:32630}, which corresponds to WGS84 / UTM zone 30N.
+#' 
+#' @param verbose \code{logical}, if set to TRUE progress bars are printed on screen.
+#' @param anomes_to_date 
 #'
 #' @return
 #' A spatial \code{sf} object with a EPSG coordinate reference system (unless cs = "utm").
@@ -23,137 +24,129 @@
 #' To see a description of the files to retrieve see
 #' "https://ceh.cedex.es/anuarioaforos/demarcaciones.asp" and go to the basin you want
 #' to get data for.
-#' Regarding coordinates, crs = "UTM" indicates local UTM coordinates, which may be a problem
-#' if the sites are located on both sides of the UTM demarcation line, so we do not recommend it.
-#' crs = "UTM30" actually means Mercator UTM 30 North with datum WGS84, whereas ETRS89 implies
-#' Mercator UTM 30 with datum ETRS89. Finally, crs = "ED50" and "WGS84" are longitude-latitude
-#' system with those datums.
-#'
-#' The \code{encoding} argument of the \code{read.csv2} function is set to "latin1" in order to
-#' correctly read diacritics and tildes.
+#' 
+#' The coordinate reference system of the resulting \code{sf} object is \code{UTM 30N} always.
+#' There are coordinates in other systems in the original CEDEX files but they are not used
+#' (although they are also retrieved and included in the output object).
 #'
 #' @export
 #'
 #' @examples
-#' # Read afliq.csv data
-#' x <- read_ceh_basin(table = "afliq)
-get_ceh_data <- function(table_name = "estaf", basin = "all", sf = TRUE, crs = "utm30", verbose = TRUE) {
+#' # Read afliq.csv data.
+#' x <- get_ceh_data(table_name = "afliq")
+#' 
+get_ceh_data <- function(table_name = "estaf", basin_names = NULL, sf = TRUE, convert_to_date = TRUE, verbose = TRUE) {
 
 
-  # Check 'table'.
+  # Check 'table_name'.
   stopifnot("Input 'table_name' must be a single string" = is.character(table_name) & length(table_name) == 1)
-  table_name <- tolower(table_name)
-  z <- c("afliq", "mensual_a", "estaf")
-  stopifnot("Wrong 'table_name' value" = any(table_name %in% z))
+  file_name <- table_name |>
+    tolower() |>
+    file_coordinates()
   
   
   # Check basin names.
-  basin_names <- basin_name()
-  if ("all" %in% basin) {
-    basin <- basin_names
-  } else {
-    stopifnot("Wrong basin name" = any(basin %in% basin_names))
+  if (!is.null(basin_names)) {
+    stopifnot("Input 'basin_names' must be a character vector" = is.character(basin_names) & is.vector(basin_names))
+    stopifnot("Wrong input! Did you mean 'miño'?" = any(!("mino" %in% basin_names)))
+    basin_names <- basin_names |>
+      tolower() |>
+      replace_accent()
   }
-
-  # Check coordinate system.
-  crs <- tolower(crs)
-  stopifnot("Wrong 'crs'" = any(crs %in% c("utm", "utm30", "wgs84", "ed50", "etrs89")))
+  basin_names <- basin_names(basin_names)
 
   
   # cli progress bar update option.
   if (verbose) options(cli.progress_show_after = 0)
   
+
+  # Will 'table_name' actually need coordinates?
+  if (is.na(file_name$file_coords)) sf <- FALSE
+
   
   # Get the full URL for files and check them out.
   url <- "https://ceh-flumen64.cedex.es/anuarioaforos//anuario-2020-2021/"
-  url_files <- check_url_files(url, basin, table_name, verbose)
-
-  if (table_name %in% c("afliq", "afliqi", "anual_a", "estadis_a", "extremos_a", "extremos_a_v", "mensual_a", "mensual_a_v")) {
-    if (table != "estaf") {
-      url_estaf <- check_url_files(url, basin, "estaf", verbose)
-    } else {
-      url_estaf <- url_files
-    }
-  }
-    
-  # If sf is TRUE, we need geographic coordinates.
-  if (sf) {
-    if (table %in% c("afliq", "afliqi", "anual_a", "estadis_a", "estaf", "extremos_a", "extremos_a_v", "mensual_a", "mensual_a_v")) {
-    
-    } else if (table %in% c("***")) {
-    }
-    
-  }
-
+  url_all <- check_url_files(url, basin_names, file_name, sf, verbose)
 
 
   # Reads data for all basins
   z <- NULL
-  for (i in 1:length(basin)) {
-    if (verbose) cli::cli_progress_bar(paste0("Downloading basin data ", basin[i]), total = 9, clear = FALSE)
-
-    # Change column names and format.
-    if (verbose) cli::cli_progress_update()
-
-    # We need "estaf" always to obtain the coordinates to sites.
-    dat_coord <- read.csv2(url_estaf[i], encoding = "latin1")
-    dat_coord <- set_colmode(dat_coord, c(rep("character", 3), rep("numeric", 19), rep("character", 5), rep("numeric", 2), "character"))
+  for (i in 1:nrow(url_all)) {
     
-    # Other tables.
-    if (table != "estaf") {
-      
-      # Read data.
-      dat <- read.csv2(url_files[i])
-      
-      # Set column formats.
-      if (table ==  "afliq") {
-        dat <- set_colmode(dat, c("character", "character", "numeric", "numeric"))
-        dat$fecha <- as.Date(dat$fecha, format = "%d/%m/%Y")
-      } else if (table == "mensual_a") {
-        dat <- set_colmode(dat, c(rep("character", 2), rep("numeric", 10)))
-        dat$fecha <- with(dat, as.Date(paste0(substr(anomes, 1, 4), "-", substr(anomes, 5, 6), "-01")))
+    
+    # Progress bar setup, if required.
+    if (verbose) {
+      if (sf) {
+        nbars <- ifelse(url_all$files[i] != url_all$coords[i], 8, 7)
       } else {
-      dat <- dat_coord
+        nbars <- 7
+      }
+      cli::cli_progress_bar(paste0("Downloading data for ", basin_names$name[i], " basin"), total = nbars, clear = FALSE)
+      cli::cli_progress_update()
+    }
+
+
+    # Read file with data.
+    dat <- read.csv2(url_all$files[i]) |> type.convert(as.is = TRUE)
+
+    
+    # If column "anomes" is present, transform to a Date object.
+    if (convert_to_date) {
+      if ("anomes" %in% tolower(colnames(dat))) {
+        dat$fecha <- anomes_to_date(dat$anomes)
+      }
+      if ("fecha" %in% tolower(colnames(dat))) {
+        dat$fecha <- as.Date(dat$fecha, "%d/%m/%Y")
+      }
+    }
+    
+
+    # Read file with coordinates to sites.
+    if (sf) {
+      if (url_all$files[i] != url_all$coords[i]) {
+        if (verbose) cli::cli_progress_update()
+        dat_coord <- read.csv2(url_all$coords[i], encoding = "latin1") |> type.convert(as.is = TRUE)
       }
     }
 
 
-    # Coordinates correction (email from Carmen Mirta Dimas Suárez, July 17th, 2024).
-    if (verbose) cli::cli_progress_update()
-    dat_coord <- correction_coordinates(dat_coord)
+    # Coordinates correction.
+    if (sf) {
+      if (file_name$file_coords == "estaf") {
+        if (verbose) cli::cli_progress_update()
+        dat_coord <- correction_coordinates(dat_coord)
+      }
+    }
 
 
     # Coordinates.
-    if (verbose) cli::cli_progress_update()
-    dat_coord <- select_coord(dat_coord, crs)
-    i <- match(dat$indroea, dat_coord$indroea)
-    dat$x <- dat_coord$x[i]
-    dat$y <- dat_coord$y[i]
+    if (sf) {
+      if (verbose) cli::cli_progress_update()
+      j <- match(dat[, file_name$id_join], dat_coord[, file_name$id_join])
+      dat$x <- as.numeric(dat_coord$xutm30[j])
+      dat$y <- as.numeric(dat_coord$yutm30[j])
+    }
 
 
   # sf object.
-    if (verbose) cli::cli_progress_update()
-    dat <- dat |> sf::st_as_sf(coords = c("x", "y"))
-
-
+    if (sf) {
+      if (verbose) cli::cli_progress_update()
+      dat <- dat |> sf::st_as_sf(coords = c("x", "y"), crs = 32630)
+    }
+    
+    
     # Add field "Cuenca" with name of basin.
     if (verbose) cli::cli_progress_update()
-    dat$Cuenca <- basin[i]
+    dat$Cuenca <- basin_names$name[i]
 
 
     # Add rows.
     if (verbose) cli::cli_progress_update()
     z <- rbind(z, dat)
-    
-    if (verbose) cli::cli_progress_update()
 
   }
-
-  if (verbose) cli::cli_process_done()
   
-  # Coordinate reference system.
-  if (cs != "utm") sf::st_crs(z) <- epsg_ceh(cs)
-
+  if (verbose) cli::cli_end()
 
   return(z)
 }

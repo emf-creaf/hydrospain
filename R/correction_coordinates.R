@@ -9,8 +9,6 @@
 #' @return
 #' The input data.frame with corrected coordinates, if needed.
 #'
-#' @export
-#'
 #' @details
 #' A correction to coordinates, email from Carmen Mirta Dimas Suárez (CEH)
 #' on July 17th, 2024. The correction applies to stations 3179, 3191, 3275 and 5107 only.
@@ -24,9 +22,30 @@ correction_coordinates <- function(df) {
   # Checks.
   stopifnot("Input 'df' must be of data.frame type" = inherits(df, "data.frame"))
   stations <- c("3179", "3191", "3275", "5107")
+  lat <- c("lat" = 401804, "lat" = 404504, "lat" = 403003, "latwgs84" = 380107)
+  lon <- c(rep(c("lon" = NA), 3), "longwgs84" = -40826)
 
 
   # Loop along stations.
+  if (any("indroea" %in% colnames(df))) {
+    i <- match(df$indroea, stations)
+    i_notNA <- !is.na(i)
+    if (sum(i_notNA) > 0) {
+      for (j in 1:length(stations)) {
+        
+        
+      }
+    }
+    
+  }
+  
+  k <- match(df$indroea, stations)
+  knotNA <- !is.na(k)
+  for (i in 1:nrow(df)) {f
+    switch()
+  }
+  
+  
   k <- match(df$indroea, stations)
   knotNA <- !is.na(k)
   kstat <- stations[k]
@@ -51,6 +70,5 @@ correction_coordinates <- function(df) {
 
 
   return(df)
-
 
 }
