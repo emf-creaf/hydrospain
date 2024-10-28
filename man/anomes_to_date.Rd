@@ -22,6 +22,7 @@ Title
 For February \code{first_day} must be 29 in non-leap years, and 28 on leap years.
 }
 \examples{
+
 # Same result.
 x <- anomes_to_date(199202)
 y <- anomes_to_date(199201)
