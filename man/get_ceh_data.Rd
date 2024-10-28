@@ -8,7 +8,6 @@ get_ceh_data(
   table_name = "estaf",
   basin_names = NULL,
   sf = TRUE,
-  convert_to_date = TRUE,
   verbose = TRUE
 )
 }
@@ -23,8 +22,6 @@ get_ceh_data(
 Coordinate system is always \code{EPSG:32630}, which corresponds to WGS84 / UTM zone 30N.}
 
 \item{verbose}{\code{logical}, if set to TRUE progress bars are printed on screen.}
-
-\item{anomes_to_date}{}
 }
 \value{
 A spatial \code{sf} object with a EPSG coordinate reference system (unless cs = "utm").

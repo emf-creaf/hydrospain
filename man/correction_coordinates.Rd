@@ -2,7 +2,7 @@
 % Please edit documentation in R/correction_coordinates.R
 \name{correction_coordinates}
 \alias{correction_coordinates}
-\title{Correction to some lat-lon coordinates}
+\title{Correction of some lat-lon coordinates}
 \usage{
 correction_coordinates(df)
 }
@@ -11,10 +11,11 @@ correction_coordinates(df)
 for latitud and longitude.}
 }
 \value{
-The input data.frame with corrected coordinates, if needed.
+The input data.frame with corrected coordinates. If column "indroea" is not present
+\code{correction_coordinates} returns the input \code{data.frame}.
 }
 \description{
-A correction is introduced to some lat-long coordinates in some basins
+A correction is introduced for some lat-long coordinates in some basins.
 }
 \details{
 A correction to coordinates, email from Carmen Mirta Dimas Suárez (CEH)

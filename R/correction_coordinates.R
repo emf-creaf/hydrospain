@@ -1,13 +1,14 @@
-#' Correction to some lat-lon coordinates
+#' Correction of some lat-lon coordinates
 #'
 #' @param df data.frame with a column named "indroea" and two other columns
 #' for latitud and longitude.
 #'
 #' @description
-#' A correction is introduced to some lat-long coordinates in some basins
+#' A correction is introduced for some lat-long coordinates in some basins.
 #'
 #' @return
-#' The input data.frame with corrected coordinates, if needed.
+#' The input data.frame with corrected coordinates. If column "indroea" is not present
+#' \code{correction_coordinates} returns the input \code{data.frame}.
 #'
 #' @details
 #' A correction to coordinates, email from Carmen Mirta Dimas Suárez (CEH)
@@ -21,50 +22,35 @@ correction_coordinates <- function(df) {
 
   # Checks.
   stopifnot("Input 'df' must be of data.frame type" = inherits(df, "data.frame"))
-  stations <- c("3179", "3191", "3275", "5107")
-  lat <- c("lat" = 401804, "lat" = 404504, "lat" = 403003, "latwgs84" = 380107)
-  lon <- c(rep(c("lon" = NA), 3), "longwgs84" = -40826)
-
-
-  # Loop along stations.
+  
+  
   if (any("indroea" %in% colnames(df))) {
-    i <- match(df$indroea, stations)
-    i_notNA <- !is.na(i)
-    if (sum(i_notNA) > 0) {
-      for (j in 1:length(stations)) {
-        
-        
-      }
-    }
     
-  }
-  
-  k <- match(df$indroea, stations)
-  knotNA <- !is.na(k)
-  for (i in 1:nrow(df)) {f
-    switch()
-  }
-  
-  
-  k <- match(df$indroea, stations)
-  knotNA <- !is.na(k)
-  kstat <- stations[k]
-  if (sum(knotNA) > 0) {
-    for (i in 1:length(k)) {
-      if (knotNA[i]) {
-        if (kstat[i] == "3179") {
-          df$lat[i] <- 401804
-        } else if (kstat[i] == "3191") {
-          df$lat[i] <- 404504
-        } else if (kstat[i] == "3275") {
-          df$lat[i] <- 403003
-        } else if (kstat[i] == "5107") {
-          df$longwgs84[i] <- -40826
-          df$latwgs84[i] <- 380107
-        } else {
-          message("Wrong station code")
-        }
+    # Stations to be modified.
+    stations <- c(3179, 3191, 3275, 5107)
+
+    
+    # Are there stations to be modified?
+    i <- match(df$indroea, stations)
+    
+    if (sum(!is.na(i)) > 0) {
+      
+      # Latitude must be corrected in all four stations. Longitude, on the other hand,
+      # only in 5107.
+      lat <- c(401804, 404504, 403003, 380107)
+      lon <- -40826
+      
+      for (j in 1:3) {
+        k <- which(i == j)
+        if (sum(!is.na(k)) > 0) df$lat[k] <- lat[j]
       }
+      
+      k <- which(i == 4)
+      if (sum(!is.na(k)) > 0) {
+        df$latwgs84[k] <- lat[3]
+        df$longwgs84[k] <- lon[1]
+      }
+      
     }
   }
 

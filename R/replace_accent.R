@@ -14,8 +14,6 @@
 #' @details
 #' It uses function \code{iconv} from the built-in \code{base} package.
 #'
-#' @export
-#'
 #' @examples
 #'
 #' # In Spanish.

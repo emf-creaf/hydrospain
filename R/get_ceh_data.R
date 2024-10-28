@@ -15,7 +15,6 @@
 #' Coordinate system is always \code{EPSG:32630}, which corresponds to WGS84 / UTM zone 30N.
 #' 
 #' @param verbose \code{logical}, if set to TRUE progress bars are printed on screen.
-#' @param anomes_to_date 
 #'
 #' @return
 #' A spatial \code{sf} object with a EPSG coordinate reference system (unless cs = "utm").
@@ -30,12 +29,15 @@
 #' (although they are also retrieved and included in the output object).
 #'
 #' @export
+#' 
+#' @importFrom utils read.csv2
+#' @importFrom utils read.csv2
 #'
 #' @examples
 #' # Read afliq.csv data.
 #' x <- get_ceh_data(table_name = "afliq")
 #' 
-get_ceh_data <- function(table_name = "estaf", basin_names = NULL, sf = TRUE, convert_to_date = TRUE, verbose = TRUE) {
+get_ceh_data <- function(table_name = "estaf", basin_names = NULL, sf = TRUE, verbose = TRUE) {
 
 
   # Check 'table_name'.
@@ -48,7 +50,7 @@ get_ceh_data <- function(table_name = "estaf", basin_names = NULL, sf = TRUE, co
   # Check basin names.
   if (!is.null(basin_names)) {
     stopifnot("Input 'basin_names' must be a character vector" = is.character(basin_names) & is.vector(basin_names))
-    stopifnot("Wrong input! Did you mean 'miño'?" = any(!("mino" %in% basin_names)))
+    stopifnot("Wrong 'mino' input" = any(!("mino" %in% basin_names)))
     basin_names <- basin_names |>
       tolower() |>
       replace_accent()
@@ -87,17 +89,15 @@ get_ceh_data <- function(table_name = "estaf", basin_names = NULL, sf = TRUE, co
 
 
     # Read file with data.
-    dat <- read.csv2(url_all$files[i]) |> type.convert(as.is = TRUE)
+    dat <- utils::read.csv2(url_all$files[i]) |> utils::type.convert(as.is = TRUE)
 
     
     # If column "anomes" is present, transform to a Date object.
-    if (convert_to_date) {
-      if ("anomes" %in% tolower(colnames(dat))) {
-        dat$fecha <- anomes_to_date(dat$anomes)
-      }
-      if ("fecha" %in% tolower(colnames(dat))) {
-        dat$fecha <- as.Date(dat$fecha, "%d/%m/%Y")
-      }
+    if ("anomes" %in% tolower(colnames(dat))) {
+      dat$fecha <- anomes_to_date(dat$anomes)
+    }
+    if ("fecha" %in% tolower(colnames(dat))) {
+      dat$fecha <- as.Date(dat$fecha, "%d/%m/%Y")
     }
     
 
@@ -105,7 +105,7 @@ get_ceh_data <- function(table_name = "estaf", basin_names = NULL, sf = TRUE, co
     if (sf) {
       if (url_all$files[i] != url_all$coords[i]) {
         if (verbose) cli::cli_progress_update()
-        dat_coord <- read.csv2(url_all$coords[i], encoding = "latin1") |> type.convert(as.is = TRUE)
+        dat_coord <- utils::read.csv2(url_all$coords[i], encoding = "latin1") |> utils::type.convert(as.is = TRUE)
       }
     }
 

@@ -5,7 +5,6 @@
 #' @param file_name 
 #' @param sf 
 #' @param verbose 
-
 #'
 #' @return Full url for files.
 #' @keywords internal

@@ -7,14 +7,22 @@
 anomes_to_date(dat, first_day = 1)
 }
 \arguments{
-\item{first_day}{numeric \code{vector} containing the day number(s) that will be used when
-building the \code{date} object.}
+\item{dat}{numeric or character \code{vector} with the strings to extract the date from.}
 
-\item{x}{}
+\item{first_day}{numeric or character \code{vector} containing the day number(s) that will be used when
+building the \code{date} object.}
+}
+\value{
+A \code{Date} object.
 }
 \description{
 Title
 }
 \details{
 For February \code{first_day} must be 29 in non-leap years, and 28 on leap years.
+}
+\examples{
+# Same result.
+x <- anomes_to_date(199202)
+y <- anomes_to_date(199201)
 }

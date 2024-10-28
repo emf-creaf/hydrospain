@@ -1,6 +1,6 @@
 #' Title
 #'
-#' @param x 
+#' @param dat numeric or character \code{vector} with the strings to extract the date from.
 #' @param first_day numeric or character \code{vector} containing the day number(s) that will be used when
 #' building the \code{date} object.
 #'
@@ -11,10 +11,10 @@
 #' For February \code{first_day} must be 29 in non-leap years, and 28 on leap years.
 #' 
 #' @examples
+#' 
 #' # Same result.
-#' x <- anomes_to_date("199201")
+#' x <- anomes_to_date(199202)
 #' y <- anomes_to_date(199201)
-
 
 anomes_to_date <- function(dat, first_day = 1) {
   
