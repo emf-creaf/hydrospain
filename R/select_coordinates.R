@@ -1,0 +1,36 @@
+#' Select where to find coordinates for CEDEX file
+#' 
+#' @description
+#' A short description...
+#' 
+#'
+#' @param table_name \code{character} with the name of the file to retrieve from the
+#' *CEDEX* site, without extension. If not given, the default value is "estaf".
+#'
+#' @return
+#' A \code{data.frame} of one row only with three fields: "file", containing the value
+#' of the "table_name" input, "file_coords", indicating the name of the CEDEX file where
+#' coordinates will be found, and "id_join", mentioning which key can be used for left-joins.
+#' 
+#' @importFrom utils read.csv2
+#'
+#' @examples
+#' x <- file_coordinates("afliq")
+select_coordinates <- function(table_name = NULL) {
+
+  if (!is.null(table_name)) {
+
+  } else {
+    
+    # Checks.
+    stopifnot("Wrong 'table_name' input" = any(table_name %in% file_coordinates$file))
+    
+    # Match 'table' name and file with coordinates.
+    file_coordinates <- file_coordinates |> dplyr::filter(file == table_name)
+    
+  }
+
+  
+  return(file_coordinates)
+
+}

@@ -18,6 +18,8 @@ Logical \code{TRUE} or \code{FALSE} vector depending on whether year is leap or 
 \details{
 Straightforward algorithm. Input \code{year} must contain numbers without decimals,
 although its \code{typeof} value can be \code{"integer"} or \code{"double"}.
+If year is <1582 (the year that marked the introduction of the Gregorian calendar),
+an error message is issued.
 }
 \examples{
 # Check leap years for XX century.

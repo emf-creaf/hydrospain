@@ -8,7 +8,7 @@
 #' @param table_name \code{character} with the name of the file to retrieve from the
 #' *CEDEX* site, without extension. If not given, the default value is "estaf".
 #' 
-#' @param basin_names \code{character} with the name of the basins to retrieve 
+#' @param basin_nam \code{character} with the name of the basins to retrieve 
 #' \code{table_name} names for. Default is to retrieve data for all basins on the *CEDEX* web site.
 #'
 #' @param sf logical, if TRUE (default), \code{get_ceh_data} returns a \code{sf} spatial object.
@@ -37,25 +37,25 @@
 #' # Read afliq.csv data.
 #' x <- get_ceh_data(table_name = "afliq")
 #' 
-get_ceh_data <- function(table_name = "estaf", basin_names = NULL, sf = TRUE, verbose = TRUE) {
+get_ceh_data <- function(table_name = "estaf", basin_nam = NULL, sf = TRUE, verbose = TRUE) {
 
 
   # Check 'table_name'.
   stopifnot("Input 'table_name' must be a single string" = is.character(table_name) & length(table_name) == 1)
   file_name <- table_name |>
     tolower() |>
-    file_coordinates()
-  
+    select_coordinates()
+print(file_name)  
   
   # Check basin names.
-  if (!is.null(basin_names)) {
-    stopifnot("Input 'basin_names' must be a character vector" = is.character(basin_names) & is.vector(basin_names))
-    stopifnot("Wrong 'mino' input" = any(!("mino" %in% basin_names)))
-    basin_names <- basin_names |>
+  if (!is.null(basin_nam)) {
+    stopifnot("Input 'basin_nam' must be a character vector" = is.character(basin_nam) & is.vector(basin_nam))
+    stopifnot("Wrong 'mino' input" = any(!("mino" %in% basin_nam)))
+    basin_nam <- basin_nam |>
       tolower() |>
       replace_accent()
   }
-  basin_names <- basin_names(basin_names)
+  basin_nam <- select_basins(basin_nam)
 
   
   # cli progress bar update option.
@@ -68,7 +68,7 @@ get_ceh_data <- function(table_name = "estaf", basin_names = NULL, sf = TRUE, ve
   
   # Get the full URL for files and check them out.
   url <- "https://ceh-flumen64.cedex.es/anuarioaforos//anuario-2020-2021/"
-  url_all <- check_url_files(url, basin_names, file_name, sf, verbose)
+  url_all <- check_url_files(url, basin_nam, file_name, sf, verbose)
 
 
   # Reads data for all basins
@@ -83,7 +83,7 @@ get_ceh_data <- function(table_name = "estaf", basin_names = NULL, sf = TRUE, ve
       } else {
         nbars <- 7
       }
-      cli::cli_progress_bar(paste0("Downloading data for ", basin_names$name[i], " basin"), total = nbars, clear = FALSE)
+      cli::cli_progress_bar(paste0("Downloading data for ", basin_nam$name[i], " basin"), total = nbars, clear = FALSE)
       cli::cli_progress_update()
     }
 
@@ -137,7 +137,7 @@ get_ceh_data <- function(table_name = "estaf", basin_names = NULL, sf = TRUE, ve
     
     # Add field "Cuenca" with name of basin.
     if (verbose) cli::cli_progress_update()
-    dat$Cuenca <- basin_names$name[i]
+    dat$Cuenca <- basin_nam$name[i]
 
 
     # Add rows.

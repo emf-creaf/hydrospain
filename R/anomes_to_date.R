@@ -13,9 +13,7 @@
 #' @examples
 #' 
 #' # Same result.
-#' x <- anomes_to_date(199202)
 #' y <- anomes_to_date(199201)
-
 anomes_to_date <- function(dat, first_day = 1) {
   
 

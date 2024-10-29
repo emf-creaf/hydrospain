@@ -1,8 +1,14 @@
 test_that("Test leap years", {
   
-  yr <- seq(-3000, 3000)
+  yr <- seq(1582, 2020, by = 1)
   
-  # Compare results with similar function in "lubridate".
-  expect_identical(lubridate::leap_year(yr), is_leap_year(yr))
+  # To compare with.
+  z <- c(F, F, T, rep(c(F, F, F, T), 109))
+  
+  # Years 1700, 1800 and 1900 are not divisible by 400.
+  z[match(c(1700, 1800, 1900), yr)] <- FALSE
+  
+  # Check.
+  expect_identical(is_leap_year(yr), z)
   
 })
