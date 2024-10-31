@@ -14,6 +14,8 @@
 #' A correction to coordinates, email from Carmen Mirta Dimas Suárez (CEH)
 #' on July 17th, 2024. The correction applies to stations 3179, 3191, 3275 and 5107 only.
 #'
+#' @noRd
+#' 
 #' @examples
 #' df <- data.frame(indroea = c("3179", "3000"), lat = 1:2, long = 3:4)
 #' correction_coordinates(df)

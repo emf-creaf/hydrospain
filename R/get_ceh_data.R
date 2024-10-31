@@ -42,10 +42,10 @@ get_ceh_data <- function(table_name = "estaf", basin_nam = NULL, sf = TRUE, verb
 
   # Check 'table_name'.
   stopifnot("Input 'table_name' must be a single string" = is.character(table_name) & length(table_name) == 1)
-  file_name <- table_name |>
+    file_name <- table_name |>
     tolower() |>
     select_coordinates()
-print(file_name)  
+
   
   # Check basin names.
   if (!is.null(basin_nam)) {
@@ -55,7 +55,6 @@ print(file_name)
       tolower() |>
       replace_accent()
   }
-  basin_nam <- select_basins(basin_nam)
 
   
   # cli progress bar update option.
@@ -68,9 +67,9 @@ print(file_name)
   
   # Get the full URL for files and check them out.
   url <- "https://ceh-flumen64.cedex.es/anuarioaforos//anuario-2020-2021/"
-  url_all <- check_url_files(url, basin_nam, file_name, sf, verbose)
+  url_all <- check_url_files(url, file_name, basin_nam, sf, verbose)
 
-
+  
   # Reads data for all basins
   z <- NULL
   for (i in 1:nrow(url_all)) {
@@ -91,7 +90,7 @@ print(file_name)
     # Read file with data.
     dat <- utils::read.csv2(url_all$files[i]) |> utils::type.convert(as.is = TRUE)
 
-    
+
     # If column "anomes" is present, transform to a Date object.
     if ("anomes" %in% tolower(colnames(dat))) {
       dat$fecha <- anomes_to_date(dat$anomes)
@@ -134,10 +133,10 @@ print(file_name)
       dat <- dat |> sf::st_as_sf(coords = c("x", "y"), crs = 32630)
     }
     
-    
+
     # Add field "Cuenca" with name of basin.
     if (verbose) cli::cli_progress_update()
-    dat$Cuenca <- basin_nam$name[i]
+    dat$Cuenca <- basin_nam[i]
 
 
     # Add rows.

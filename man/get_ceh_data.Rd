@@ -4,18 +4,13 @@
 \alias{get_ceh_data}
 \title{Read data from gauging stations of most largest Spanish rivers}
 \usage{
-get_ceh_data(
-  table_name = "estaf",
-  basin_names = NULL,
-  sf = TRUE,
-  verbose = TRUE
-)
+get_ceh_data(table_name = "estaf", basin_nam = NULL, sf = TRUE, verbose = TRUE)
 }
 \arguments{
 \item{table_name}{\code{character} with the name of the file to retrieve from the
 \emph{CEDEX} site, without extension. If not given, the default value is "estaf".}
 
-\item{basin_names}{\code{character} with the name of the basins to retrieve
+\item{basin_nam}{\code{character} with the name of the basins to retrieve
 \code{table_name} names for. Default is to retrieve data for all basins on the \emph{CEDEX} web site.}
 
 \item{sf}{logical, if TRUE (default), \code{get_ceh_data} returns a \code{sf} spatial object.

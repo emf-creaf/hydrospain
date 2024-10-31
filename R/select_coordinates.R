@@ -13,19 +13,20 @@
 #' coordinates will be found, and "id_join", mentioning which key can be used for left-joins.
 #' 
 #' @importFrom utils read.csv2
-#'
+#' 
+#' @noRd
+#' 
 #' @examples
-#' x <- file_coordinates("afliq")
-select_coordinates <- function(table_name = NULL) {
+#' x <- select_coordinates("afliq")
+#' 
+select_coordinates <- function(table_name = "estaf") {
 
   if (!is.null(table_name)) {
 
-  } else {
-    
-    # Checks.
+    # # Checks.
     stopifnot("Wrong 'table_name' input" = any(table_name %in% file_coordinates$file))
-    
-    # Match 'table' name and file with coordinates.
+
+    # # Match 'table' name and file with coordinates.
     file_coordinates <- file_coordinates |> dplyr::filter(file == table_name)
     
   }

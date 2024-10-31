@@ -10,6 +10,8 @@
 #' @details
 #' For February \code{first_day} must be 29 in non-leap years, and 28 on leap years.
 #' 
+#' @noRd
+#' 
 #' @examples
 #' 
 #' # Same result.

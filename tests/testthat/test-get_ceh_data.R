@@ -1,6 +1,5 @@
 test_that("gauging station data", {
   
-  setwd("..\\..")
   x <- get_ceh_data(table_name = "afliq", basin_nam = "duero", sf = TRUE, verbose = FALSE)
   expect_true("sf" %in% class(x))
   
