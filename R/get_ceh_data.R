@@ -5,8 +5,9 @@
 #' several Spanish basins from the Centro de Estudios Hidrológicos (CEX) of
 #' the Centro de Estudios y Experimentación de Obras Públicas (CEDEX).
 #'
-#' @param table_name \code{character} with the name of the file to retrieve from the
-#' *CEDEX* site, without extension. If not given, the default value is "estaf".
+#' @param file_name \code{character} string with the name of the file to retrieve from the
+#' *CEDEX* site, without extension. If not given, the default value is "estaf". More than one name is
+#' not allowed.
 #' 
 #' @param basin_nam \code{character} with the name of the basins to retrieve 
 #' \code{table_name} names for. Default is to retrieve data for all basins on the *CEDEX* web site.
@@ -17,7 +18,7 @@
 #' @param verbose \code{logical}, if set to TRUE progress bars are printed on screen.
 #'
 #' @return
-#' A spatial \code{sf} object with a EPSG coordinate reference system (unless cs = "utm").
+#' A spatial \code{sf} object with a WGS84/UTM zone 30N coordinate reference system (EPSG:32630).
 #'
 #' @details
 #' To see a description of the files to retrieve see
@@ -26,28 +27,28 @@
 #' 
 #' The coordinate reference system of the resulting \code{sf} object is \code{UTM 30N} always.
 #' There are coordinates in other systems in the original CEDEX files but they are not used
-#' (although they are also retrieved and included in the output object).
+#' (although they are also retrieved and included in the output object). Notice that long-lat coordinates
+#' are given as 'DDMMSS' strings only. Future versions will provide those coordinates in numeric format.
 #'
 #' @export
 #' 
 #' @importFrom utils read.csv2
-#' @importFrom utils read.csv2
 #'
 #' @examples
-#' # Read afliq.csv data.
-#' x <- get_ceh_data(table_name = "afliq")
+#' # Read afliq.csv data from basin 'cantabrico'.
+#' x <- get_ceh_data(file_name = "afliq", basin_nam = "cantabrico", verbose = FALSE)
 #' 
-get_ceh_data <- function(table_name = "estaf", basin_nam = NULL, sf = TRUE, verbose = TRUE) {
+get_ceh_data <- function(file_name = "estaf", basin_nam = NULL, sf = TRUE, verbose = TRUE) {
 
 
   # Check 'table_name'.
-  stopifnot("Input 'table_name' must be a single string" = is.character(table_name) & length(table_name) == 1)
-    file_name <- table_name |>
+  stopifnot("Input 'file_name' must be a single string" = is.character(file_name) & length(file_name) == 1)
+    file_name <- file_name |>
     tolower() |>
     select_coordinates()
 
   
-  # Check basin names.
+  # Check basin names. Remove diacritics.
   if (!is.null(basin_nam)) {
     stopifnot("Input 'basin_nam' must be a character vector" = is.character(basin_nam) & is.vector(basin_nam))
     stopifnot("Wrong 'mino' input" = any(!("mino" %in% basin_nam)))

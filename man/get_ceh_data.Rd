@@ -4,11 +4,12 @@
 \alias{get_ceh_data}
 \title{Read data from gauging stations of most largest Spanish rivers}
 \usage{
-get_ceh_data(table_name = "estaf", basin_nam = NULL, sf = TRUE, verbose = TRUE)
+get_ceh_data(file_name = "estaf", basin_nam = NULL, sf = TRUE, verbose = TRUE)
 }
 \arguments{
-\item{table_name}{\code{character} with the name of the file to retrieve from the
-\emph{CEDEX} site, without extension. If not given, the default value is "estaf".}
+\item{file_name}{\code{character} string with the name of the file to retrieve from the
+\emph{CEDEX} site, without extension. If not given, the default value is "estaf". More than one name is
+not allowed.}
 
 \item{basin_nam}{\code{character} with the name of the basins to retrieve
 \code{table_name} names for. Default is to retrieve data for all basins on the \emph{CEDEX} web site.}
@@ -19,7 +20,7 @@ Coordinate system is always \code{EPSG:32630}, which corresponds to WGS84 / UTM 
 \item{verbose}{\code{logical}, if set to TRUE progress bars are printed on screen.}
 }
 \value{
-A spatial \code{sf} object with a EPSG coordinate reference system (unless cs = "utm").
+A spatial \code{sf} object with a WGS84/UTM zone 30N coordinate reference system (EPSG:32630).
 }
 \description{
 \code{get_ceh_data} retrieves time series datasets and statistics for
@@ -33,10 +34,11 @@ to get data for.
 
 The coordinate reference system of the resulting \code{sf} object is \code{UTM 30N} always.
 There are coordinates in other systems in the original CEDEX files but they are not used
-(although they are also retrieved and included in the output object).
+(although they are also retrieved and included in the output object). Notice that long-lat coordinates
+are given as 'DDMMSS' strings only. Future versions will provide those coordinates in numeric format.
 }
 \examples{
-# Read afliq.csv data.
-x <- get_ceh_data(table_name = "afliq")
+# Read afliq.csv data from basin 'cantabrico'.
+x <- get_ceh_data(file_name = "afliq", basin_nam = "cantabrico", verbose = FALSE)
 
 }

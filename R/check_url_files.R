@@ -1,12 +1,25 @@
 #' Check URLs and return full http addresses.
-#'
+#' 
+#' @description
+#' A short description...
+#' 
 #' @param url a valid URL.
-#' @param basin_nam its correctness is not checked.
-#' @param file_name 
-#' @param sf 
-#' @param verbose 
+#' @param file_name \code{data.frame} of one row and three columns named 'file', 'file_coords' and 'id_join',
+#' *CEDEX* site, without extension.
+#' @param basin_nam \code{character} with the name of the basins to retrieve 
+#' \code{table_name} names for.
+#' 
+#' @param sf logical, if TRUE (default), \code{get_ceh_data} returns a \code{sf} spatial object.
+#' Coordinate system is always \code{EPSG:32630}, which corresponds to WGS84 / UTM zone 30N.
+#' 
+#' @param verbose \code{logical}, if set to TRUE progress bars are printed on screen.
 #'
 #' @return Full url for files.
+#' 
+#' @example
+#' # Read one file.
+#' url <- "https://ceh-flumen64.cedex.es/anuarioaforos//anuario-2020-2021/"
+#' file_name <- data.frame(file = "afliq", file_coords = "estaf", id_join = "indroea")
 #' 
 #' @noRd
 #'

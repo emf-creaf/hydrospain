@@ -10,6 +10,6 @@ test_that("check url files", {
   
   
   # Vi forventer en fail.
-  expect_no_condition(check_url_files(url, file_name, sf = TRUE, verbose = FALSE))
+  expect_error(check_url_files(url, file_name, sf = TRUE, verbose = FALSE))
   
 })
