@@ -9,8 +9,9 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
-Imports: cli (>= 3.6.3), sf (>= 1.0-17), httr (>= 1.4.7), dplyr (>= 1.1.4)
+Imports: cli (>= 3.6.3), sf (>= 1.0-17), httr2 (>= 1.0.6), dplyr (>= 1.1.4)
 Suggests: 
+    httptest2,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Depends: 

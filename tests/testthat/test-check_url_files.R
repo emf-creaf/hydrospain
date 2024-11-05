@@ -5,7 +5,6 @@ test_that("check url files", {
   file_name <- data.frame(file = "afliq", file_coords = "estaf", id_join = "indroea")
   
   # Det virker riktig.
-  df <- data.frame(name = c("ebro", "duero", "cantabrico"), nameceh = c("EBRO", "DUERO", "CANTABRICO"))
   expect_no_condition(check_url_files(url, file_name, c("ebro", "duero", "cantabrico"), sf = TRUE, verbose = FALSE))
   
   

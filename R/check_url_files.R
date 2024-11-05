@@ -19,6 +19,7 @@
 #' @examples
 #' url <- "https://ceh-flumen64.cedex.es/anuarioaforos//anuario-2020-2021/"
 #' file_name <- data.frame(file = "afliq", file_coords = "estaf", id_join = "indroea")
+#' check_url_files(url, file_name, "ebro")
 #' 
 #' @noRd
 #'
@@ -42,19 +43,18 @@ check_url_files <- function(url, file_name, basin_nam, sf = TRUE, verbose = TRUE
   url_files <- url_status_files <- NULL
   if (sf) url_coords <- url_status_coords <- NULL
   if (verbose) cli::cli_progress_update()
-  
+
   
   #  Main loop to get URL status.
   for (i in 1:nbasin) {
 
     x <- basin_nam$nameceh[i]
-    
-    url_files <- c(url_files, paste0(url, x, "//", file_name$file, ".csv"))
-    if (sf) url_coords <- c(url_coords, paste0(url, x, "//", file_name$file_coords, ".csv"))
-    
-    url_status_files <- c(url_status_files, httr::GET(url_files[i])$status_code)
-    if (sf) url_status_coords <- c(url_status_coords, httr::GET(url_coords[i])$status_code)
-    
+    url_files <- c(url_files, paste0(url, x, "/", file_name$file, ".csv"))
+    if (sf) url_coords <- c(url_coords, paste0(url, x, "/", file_name$file_coords, ".csv"))
+    url_status_files <- c(url_status_files, status_code(url_files[i]))
+
+
+    if (sf) url_status_coords <- c(url_status_coords, status_code(url_coords[i]))
     if (verbose) cli::cli_progress_update()
   }
 
