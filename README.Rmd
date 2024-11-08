@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of cehAforos is to allow users to easily download datasets for gauging stations in Spanish rivers.
+The goal of cehAforos is to allow users to easily download datasets for gauging stations in Spanish rivers. The datasets are available at the [CEDEX web site](https://ceh.cedex.es/anuarioaforos/demarcaciones.asp). 
 
 ## Installation
 
@@ -36,7 +36,7 @@ This is a basic example which shows you how to download daily data from river ga
 ```{r example1}
 library(cehAforos)
 # Use verbose = TRUE (default) if you want to track progress.
-x <- get_ceh_data(table = "afliq", basin = "ebro", verbose = FALSE)
+x <- get_ceh_data(file_name = "afliq", basin_nam = "ebro", verbose = FALSE)
 ```
 
 <br>

@@ -7,7 +7,8 @@
 <!-- badges: end -->
 
 The goal of cehAforos is to allow users to easily download datasets for
-gauging stations in Spanish rivers.
+gauging stations in Spanish rivers. The datasets are available at [the
+CEDEX web site](https://ceh.cedex.es/anuarioaforos/demarcaciones.asp)
 
 ## Installation
 
@@ -17,9 +18,10 @@ You can install the development version of cehAforos from
 ``` r
 # install.packages("pak")
 pak::pak("emf-creaf/cehAforos")
-#> 
+#> ℹ Loading metadata database✔ Loading metadata database ... done
+#>  
 #> ℹ No downloads are needed
-#> ✔ 1 pkg: kept 1 [2.8s]
+#> ✔ 1 pkg + 35 deps: kept 31 [9.1s]
 ```
 
 ## Example
@@ -30,7 +32,7 @@ river gauging stations for the Ebro basin:
 ``` r
 library(cehAforos)
 # Use verbose = TRUE (default) if you want to track progress.
-# x <- read_cedex_basin(table = "afliq", basin = "ebro", verbose = FALSE)
+# x <- get_ceh_data(table = "afliq", basin = "ebro", verbose = FALSE)
 ```
 
 <br>
