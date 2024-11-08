@@ -25,8 +25,8 @@ The goal of cehAforos is to allow users to easily download datasets for gauging 
 You can install the development version of cehAforos from [GitHub](https://github.com/) with:
 
 ```{r install_it}
-# install.packages("pak")
-pak::pak("emf-creaf/cehAforos")
+# install.packages("githubinstall")
+# githubinstall::gh_install_packages("cehAforos", "devel")
 ```
 
 ## Example
@@ -34,7 +34,6 @@ pak::pak("emf-creaf/cehAforos")
 This is a basic example which shows you how to download daily data from river gauging stations for the Ebro basin:
 
 ```{r example1}
-library(cehAforos)
 # Use verbose = TRUE (default) if you want to track progress.
 x <- get_ceh_data(file_name = "afliq", basin_nam = "ebro", verbose = FALSE)
 ```

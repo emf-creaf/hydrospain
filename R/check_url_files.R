@@ -4,10 +4,16 @@
 #' A short description...
 #' 
 #' @param url a valid URL.
+#' 
 #' @param file_name \code{data.frame} of one row and three columns named 'file', 'file_coords' and 'id_join',
 #' *CEDEX* site, without extension.
+#' 
 #' @param basin_nam \code{character} with the name of the basins to retrieve 
 #' \code{table_name} names for.
+#' 
+#' @param timeout positive integer specifying the timeout for some Internet operations, in seconds.
+#' Default is 120 seconds. Depending on the bandwidth of your internet connection or on the state of the
+#' CEDEX servers you may have to set a \code{timeout} value longer than 120.
 #' 
 #' @param sf logical, if TRUE (default), \code{get_ceh_data} returns a \code{sf} spatial object.
 #' Coordinate system is always \code{EPSG:32630}, which corresponds to WGS84 / UTM zone 30N.
@@ -23,7 +29,7 @@
 #' 
 #' @noRd
 #'
-check_url_files <- function(url, file_name, basin_nam, sf = TRUE, verbose = TRUE) {
+check_url_files <- function(url, file_name, basin_nam, timeout = 120, sf = TRUE, verbose = TRUE) {
 
   
   # Check basins.
@@ -37,6 +43,10 @@ check_url_files <- function(url, file_name, basin_nam, sf = TRUE, verbose = TRUE
     cli::cli_progress_bar(paste0("Checking URL status"), total = nbasin + 7, clear = FALSE)
     cli::cli_progress_update()
   }
+  
+  
+  # Setting timeout.
+  options(timeout = timeout)
   
   
   # Initialize variables.

@@ -11,6 +11,10 @@
 #' 
 #' @param basin_nam \code{character} with the name of the basins to retrieve 
 #' \code{table_name} names for. Default is to retrieve data for all basins on the *CEDEX* web site.
+#' 
+#' @param timeout positive integer specifying the timeout for some Internet operations, in seconds.
+#' Default is 120 seconds. Depending on the bandwidth of your internet connection or on the state of the
+#' CEDEX servers you may have to set a \code{timeout} value longer than 120.
 #'
 #' @param sf logical, if TRUE (default), \code{get_ceh_data} returns a \code{sf} spatial object.
 #' Coordinate system is always \code{EPSG:32630}, which corresponds to WGS84 / UTM zone 30N.
@@ -38,7 +42,7 @@
 #' # Read afliq.csv data from basin 'cantabrico'.
 #' x <- get_ceh_data(file_name = "afliq", basin_nam = "cantabrico", verbose = FALSE)
 #' 
-get_ceh_data <- function(file_name = "estaf", basin_nam = NULL, sf = TRUE, verbose = TRUE) {
+get_ceh_data <- function(file_name = "estaf", basin_nam = NULL, timeout = 120, sf = TRUE, verbose = TRUE) {
 
 
   # Check 'table_name'.
@@ -56,6 +60,10 @@ get_ceh_data <- function(file_name = "estaf", basin_nam = NULL, sf = TRUE, verbo
       tolower() |>
       replace_accent()
   }
+    
+    
+  # Setting timeout.
+  options(timeout = timeout)
 
   
   # cli progress bar update option.
@@ -68,7 +76,8 @@ get_ceh_data <- function(file_name = "estaf", basin_nam = NULL, sf = TRUE, verbo
   
   # Get the full URL for files and check them out.
   url <- "https://ceh-flumen64.cedex.es/anuarioaforos//anuario-2020-2021/"
-  url_all <- check_url_files(url, file_name, basin_nam, sf, verbose)
+  url_all <- check_url_files(url = url, file_name = file_name, basin_nam = basin_nam,
+                             timeout = timeout, sf = sf, verbose = verbose)
 
   
   # Reads data for all basins
@@ -83,7 +92,7 @@ get_ceh_data <- function(file_name = "estaf", basin_nam = NULL, sf = TRUE, verbo
       } else {
         nbars <- 7
       }
-      cli::cli_progress_bar(paste0("Downloading data for ", basin_nam$name[i], " basin"), total = nbars, clear = FALSE)
+      cli::cli_progress_bar(paste0("Downloading data for ", basin_nam[i], " basin"), total = nbars, clear = FALSE)
       cli::cli_progress_update()
     }
 

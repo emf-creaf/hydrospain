@@ -4,7 +4,13 @@
 \alias{get_ceh_data}
 \title{Read data from gauging stations of most largest Spanish rivers}
 \usage{
-get_ceh_data(file_name = "estaf", basin_nam = NULL, sf = TRUE, verbose = TRUE)
+get_ceh_data(
+  file_name = "estaf",
+  basin_nam = NULL,
+  timeout = 120,
+  sf = TRUE,
+  verbose = TRUE
+)
 }
 \arguments{
 \item{file_name}{\code{character} string with the name of the file to retrieve from the
@@ -13,6 +19,10 @@ not allowed.}
 
 \item{basin_nam}{\code{character} with the name of the basins to retrieve
 \code{table_name} names for. Default is to retrieve data for all basins on the \emph{CEDEX} web site.}
+
+\item{timeout}{positive integer specifying the timeout for some Internet operations, in seconds.
+Default is 120 seconds. Depending on the bandwidth of your internet connection or on the state of the
+CEDEX servers you may have to set a \code{timeout} value longer than 120.}
 
 \item{sf}{logical, if TRUE (default), \code{get_ceh_data} returns a \code{sf} spatial object.
 Coordinate system is always \code{EPSG:32630}, which corresponds to WGS84 / UTM zone 30N.}
