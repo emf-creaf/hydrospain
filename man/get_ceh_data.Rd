@@ -8,6 +8,7 @@ get_ceh_data(
   file_name = "estaf",
   basin_nam = NULL,
   timeout = 120,
+  first_day = 1,
   sf = TRUE,
   verbose = TRUE
 )
@@ -23,6 +24,9 @@ not allowed.}
 \item{timeout}{positive integer specifying the timeout for some Internet operations, in seconds.
 Default is 120 seconds. Depending on the bandwidth of your internet connection or on the state of the
 CEDEX servers you may have to set a \code{timeout} value longer than 120.}
+
+\item{first_day}{numeric or character \code{vector} containing the day number(s) that will be set when
+building the \code{date} object.}
 
 \item{sf}{logical, if TRUE (default), \code{get_ceh_data} returns a \code{sf} spatial object.
 Coordinate system is always \code{EPSG:32630}, which corresponds to WGS84 / UTM zone 30N.}

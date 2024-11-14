@@ -1,7 +1,7 @@
 #' Select where to find coordinates for CEDEX file
 #' 
 #' @description
-#' A short description...
+#' \code{select_coordinates} indicates where to find spatial coordinates for \code{table_name}.
 #' 
 #'
 #' @param table_name \code{character} with the name of the file to retrieve from the

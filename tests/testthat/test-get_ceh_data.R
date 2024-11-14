@@ -1,5 +1,9 @@
 test_that("gauging station data", {
 
+  # No need for coordinates.
+  x <- get_ceh_data("hojas50", basin_nam = "guadalquivir", verbose = FALSE)
+  expect_false(any("sf" %in% class(x)))
+  
   x <- get_ceh_data(file_name = "afliq", basin_nam = "duero", sf = TRUE, verbose = FALSE)
   expect_true("sf" %in% class(x))
 
@@ -13,8 +17,7 @@ test_that("gauging station data", {
   expect_error(get_ceh_data(file_name = "xx", basin_nam = "duero", sf = TRUE, verbose = FALSE))
   expect_error(get_ceh_data(file_name = "xx", basin_nam = "xx", sf = TRUE, verbose = FALSE))
 
-  # No need for coordinates.
-  expect_no_error(get_ceh_data("hojas50", basin_nam = "guadalquivir", verbose = FALSE))
 
+  
 })
 

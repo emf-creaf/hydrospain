@@ -1,14 +1,17 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# cehAforos
+## Overview
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of cehAforos is to allow users to easily download datasets for
-gauging stations in Spanish rivers. The datasets are available at [the
-CEDEX web site](https://ceh.cedex.es/anuarioaforos/demarcaciones.asp)
+The goal of the $\tt{cehAforos}$ R package is to allow users to easily
+download historical data from for gauging stations in Spanish rivers.
+Those datasets are available at the [CEDEX web
+site](https://ceh.cedex.es/anuarioaforos/demarcaciones.asp). Rather that
+downloading oneself, $\texttt{cehAforos}$ allows the automatic retrieval
+of any of those files, appending UTM30 coordinates to the datasets.
 
 ## Installation
 
@@ -16,12 +19,9 @@ You can install the development version of cehAforos from
 [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("pak")
-pak::pak("emf-creaf/cehAforos")
-#> ℹ Loading metadata database✔ Loading metadata database ... done
-#>  
-#> ℹ No downloads are needed
-#> ✔ 1 pkg + 35 deps: kept 31 [9.1s]
+# install.packages("githubinstall")
+# githubinstall::gh_install_packages("cehAforos", "devel")
+library(cehAforos)
 ```
 
 ## Example
@@ -30,9 +30,8 @@ This is a basic example which shows you how to download daily data from
 river gauging stations for the Ebro basin:
 
 ``` r
-library(cehAforos)
 # Use verbose = TRUE (default) if you want to track progress.
-# x <- get_ceh_data(table = "afliq", basin = "ebro", verbose = FALSE)
+# x <- get_ceh_data(file_name = "afliq", basin_nam = "ebro", verbose = FALSE)
 ```
 
 <br>
@@ -41,5 +40,5 @@ We can retrieve as easily the same datasets for all stations and from
 all the basins by omitting the $\tt{basin}$ parameter.
 
 ``` r
-# x <- read_cedex_basin(table = "afliq", verbose = FALSE)
+# x <- get_ceh_data(file_name = "afliq", verbose = FALSE)
 ```

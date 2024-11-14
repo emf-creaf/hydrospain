@@ -16,6 +16,9 @@ test_that("Extract date from 'anomes'", {
   # Error days in month other than February
   expect_error(anomes_to_date(c("210001", "200004"), first_day = 31))
   
+  # Error first_day is character.
+  expect_error(anomes_to_date(c("210001", "200004"), first_day = "31"))
+  
   # Expected dates. Days can be anything.
   expect_identical(anomes_to_date(c("210001", "200009"), first_day = c(17, 4)),
                                   as.Date(c("17/01/2100", "4/9/2000"), "%d/%m/%Y"))

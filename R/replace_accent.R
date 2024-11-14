@@ -1,8 +1,7 @@
 #' Remove diacritical marks and tildes (~) from a string.
 #'
 #' @description
-#' A simple function to remove diacritical marks (aka accents) and tildes
-#' from a string or a vector of strings.
+#' A simple function to remove diacritical marks (aka accents) and tildes from a string or a vector of strings.
 #' Accentuated and/or letters with tilde are then replaced by their non-accentuated and/or
 #' non-tilde version.
 #'

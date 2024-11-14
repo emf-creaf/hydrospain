@@ -1,7 +1,7 @@
-#' Correction of some lat-lon coordinates
+#' Correction of lat-long coordinates
 #'
 #' @param df data.frame with a column named "indroea" and two other columns
-#' for latitud and longitude.
+#' for latitude and longitude.
 #'
 #' @description
 #' A correction is introduced for some lat-long coordinates in some basins.

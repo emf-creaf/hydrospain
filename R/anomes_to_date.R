@@ -1,7 +1,7 @@
 #' Title
 #'
 #' @param dat numeric or character \code{vector} with the strings to extract the date from.
-#' @param first_day numeric or character \code{vector} containing the day number(s) that will be used when
+#' @param first_day numeric \code{vector} containing the day number(s) that will be used when
 #' building the \code{date} object.
 #'
 #' @return
@@ -23,6 +23,7 @@ anomes_to_date <- function(dat, first_day = 1) {
   stopifnot("Input 'dat' must be a vector" = is.vector(dat))
   if (is.character(dat)) dat <- as.numeric(dat)
   stopifnot("Strings/Numbers in 'dat' must have 6 digits" = all(nchar(dat) == 6))
+  stopifnot("Input 'first_day' must be numeric vector" = is.numeric(first_day) & is.vector(first_day))
   stopifnot("Input 'first_day' cannot be larger than 31 or smaller than 1" = all(first_day <= 31 & first_day > 0))
   ndat <- length(dat)
   if (length(first_day) > 1) {

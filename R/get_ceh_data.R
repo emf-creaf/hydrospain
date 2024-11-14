@@ -15,6 +15,9 @@
 #' @param timeout positive integer specifying the timeout for some Internet operations, in seconds.
 #' Default is 120 seconds. Depending on the bandwidth of your internet connection or on the state of the
 #' CEDEX servers you may have to set a \code{timeout} value longer than 120.
+#' 
+#' @param first_day numeric or character \code{vector} containing the day number(s) that will be set when
+#' building the \code{date} object.
 #'
 #' @param sf logical, if TRUE (default), \code{get_ceh_data} returns a \code{sf} spatial object.
 #' Coordinate system is always \code{EPSG:32630}, which corresponds to WGS84 / UTM zone 30N.
@@ -42,7 +45,7 @@
 #' # Read afliq.csv data from basin 'cantabrico'.
 #' x <- get_ceh_data(file_name = "afliq", basin_nam = "cantabrico", verbose = FALSE)
 #' 
-get_ceh_data <- function(file_name = "estaf", basin_nam = NULL, timeout = 120, sf = TRUE, verbose = TRUE) {
+get_ceh_data <- function(file_name = "estaf", basin_nam = NULL, timeout = 120, first_day = 1, sf = TRUE, verbose = TRUE) {
 
 
   # Check 'table_name'.
@@ -103,7 +106,7 @@ get_ceh_data <- function(file_name = "estaf", basin_nam = NULL, timeout = 120, s
 
     # If column "anomes" is present, transform to a Date object.
     if ("anomes" %in% tolower(colnames(dat))) {
-      dat$fecha <- anomes_to_date(dat$anomes)
+      dat$fecha <- anomes_to_date(dat$anomes, first_day = first_day)
     }
     if ("fecha" %in% tolower(colnames(dat))) {
       dat$fecha <- as.Date(dat$fecha, "%d/%m/%Y")

@@ -1,7 +1,7 @@
 #' Check URLs and return full http addresses.
 #' 
 #' @description
-#' A short description...
+#' \code{check_url_files} verifies that the requests to 'file_name' files are ok.
 #' 
 #' @param url a valid URL.
 #' 
@@ -21,6 +21,9 @@
 #' @param verbose \code{logical}, if set to TRUE progress bars are printed on screen.
 #'
 #' @return Full url for files.
+#' 
+#' @details
+#' 'file_name' will be pasted to the input 'URL' and a status request will be sent.
 #' 
 #' @examples
 #' url <- "https://ceh-flumen64.cedex.es/anuarioaforos//anuario-2020-2021/"

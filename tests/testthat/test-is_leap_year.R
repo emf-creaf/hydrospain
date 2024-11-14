@@ -11,4 +11,7 @@ test_that("Test leap years", {
   # Check.
   expect_identical(is_leap_year(yr), z)
   
+  # Integer years.
+  expect_error(is_leap_year(1890.5))
+  
 })
