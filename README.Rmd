@@ -25,11 +25,11 @@ The goal of the $\tt{cehAforos}$ R package is to allow users to easily download 
 
 ## Installation
 
-You can install the development version of cehAforos from [GitHub](https://github.com/) with:
+You can install the development version of hydrospain from [GitHub](https://github.com/) with:
 
 ```{r install_it}
 # install.packages("githubinstall")
-# githubinstall::gh_install_packages("cehAforos", "devel")
+# githubinstall::gh_install_packages("hydrospain", "devel")
 library(cehAforos)
 ```
 
@@ -40,7 +40,7 @@ This is a basic example which shows you how to download daily data from river ga
 
 ```{r example1, eval = FALSE}
 # Use verbose = TRUE (default) if you want to track progress.
-x <- get_ceh_data(file_name = "afliq", basin_nam = "ebro", verbose = FALSE)
+x <- hydrospain(file_name = "afliq", basin_nam = "ebro", verbose = FALSE)
 ```
 
 <br>
@@ -48,7 +48,7 @@ x <- get_ceh_data(file_name = "afliq", basin_nam = "ebro", verbose = FALSE)
 We can retrieve as easily the same datasets for all stations and from all the basins by omitting the $\tt{basin}$ parameter.
 
 ```{r example2, eval = FALSE}
-x <- get_ceh_data(file_name = "afliq", verbose = FALSE)
+x <- hydrospain(file_name = "afliq", verbose = FALSE)
 ```
 
 <br>

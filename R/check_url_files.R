@@ -15,7 +15,7 @@
 #' Default is 120 seconds. Depending on the bandwidth of your internet connection or on the state of the
 #' CEDEX servers you may have to set a \code{timeout} value longer than 120.
 #' 
-#' @param sf logical, if TRUE (default), \code{get_ceh_data} returns a \code{sf} spatial object.
+#' @param sf logical, if TRUE (default), \code{hydrospain} returns a \code{sf} spatial object.
 #' Coordinate system is always \code{EPSG:32630}, which corresponds to WGS84 / UTM zone 30N.
 #' 
 #' @param verbose \code{logical}, if set to TRUE progress bars are printed on screen.

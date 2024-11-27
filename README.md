@@ -6,7 +6,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of the $\tt{cehAforos}$ R package is to allow users to easily
+The goal of the $\tt{hydrospain}$ R package is to allow users to easily
 download historical data from for gauging stations in Spanish rivers.
 Those datasets are available at the [CEDEX web
 site](https://ceh.cedex.es/anuarioaforos/demarcaciones.asp). Rather that
@@ -31,7 +31,7 @@ river gauging stations for the Ebro basin:
 
 ``` r
 # Use verbose = TRUE (default) if you want to track progress.
-# x <- get_ceh_data(file_name = "afliq", basin_nam = "ebro", verbose = FALSE)
+# x <- hydrospain(file_name = "afliq", basin_nam = "ebro", verbose = FALSE)
 ```
 
 <br>
@@ -40,5 +40,5 @@ We can retrieve as easily the same datasets for all stations and from
 all the basins by omitting the $\tt{basin}$ parameter.
 
 ``` r
-# x <- get_ceh_data(file_name = "afliq", verbose = FALSE)
+# x <- hydrospain(file_name = "afliq", verbose = FALSE)
 ```
