@@ -2,8 +2,12 @@ Package: hydrospain
 Title: Read and download data from gauging station in Spanish rivers
 Version: 0.0.1
 Authors@R: 
-    person("Roberto", "Molowny-Horas", , "roberto@creaf.uab.es", role = c("aut", "cre"),
-           comment = c(ORCID = "0000-0003-2626-6379"))
+    person(given = "Roberto",
+        family = "Molowny-Horas",
+        role = c("aut", "cre"),
+        email = "roberto@creaf.uab.es",
+        comment = c(ORCID = "0000-0003-2626-6379")
+    )
 Description: Simple download of daily and monthly flow data from gauging stations in Spanish rivers. Data sets are retrieved from the web of the Spanish CEDEX.
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -11,7 +15,6 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Imports: cli (>= 3.6.3), sf (>= 1.0-17), httr2 (>= 1.0.6), dplyr (>= 1.1.4)
 Suggests: 
-    httptest2,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Depends: 

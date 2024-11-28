@@ -28,11 +28,27 @@ The goal of the `hydrospain` R package is to allow users to easily download hist
 You can install the development version of `hydrospain` from [GitHub](https://github.com/) with:
 
 ```{r install_it, eval = FALSE}
-# install.packages("githubinstall")
-# githubinstall::gh_install_packages("hydrospain", "devel")
+# install.packages("devtools")
+# devtools::install_github("emf-creaf/hydrospain")
 library(hydrospain)
 ```
 
+<br>
+
+Available basin names, as of Nov. 2024, are the following:
+
+| **basin_nam**  | **CEDEX full basin name**           |
+|----------------|---------------------------          |
+| galicia        | AUGAS DE GALICIA – XUNTA DE GALICIA |
+| cantabrico     | C.H. CANTABRICO                     |
+| duero          | C.H. DUERO                          |
+| ebro           | C.H. EBRO                           |
+| guadalquivir   | C.H. GUADALQUIVIR                   |
+| guadiana       | C.H. GUADIANA                       |
+| jucar          | C.H. JUCAR                          |
+| mino           | C.H. MIÑO-SIL                       |
+| segura         | C.H. SEGURA                         |
+| tajo           | C.H. TAJO                           |
 
 ## Example
 

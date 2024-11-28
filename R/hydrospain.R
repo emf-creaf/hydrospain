@@ -28,14 +28,31 @@
 #' A spatial \code{sf} object with a WGS84/UTM zone 30N coordinate reference system (EPSG:32630).
 #'
 #' @details
-#' To see a description of the files to retrieve see
-#' "https://ceh.cedex.es/anuarioaforos/demarcaciones.asp" and go to the basin you want
-#' to get data for.
+#' For a description of the files to retrieve, check
+#' "https://ceh.cedex.es/anuarioaforos/demarcaciones.asp" and click on the basin name for which you want
+#' to fetch data.
 #' 
 #' The coordinate reference system of the resulting \code{sf} object is \code{UTM 30N} always.
 #' There are coordinates in other systems in the original CEDEX files but they are not used
 #' (although they are also retrieved and included in the output object). Notice that long-lat coordinates
 #' are given as 'DDMMSS' strings only. Future versions will provide those coordinates in numeric format.
+#' 
+#' \code{hydrospain} will add UTM30 X-Y coordinates to gauging station data.
+#' 
+#' Available basin names, as of Nov. 2024, are the following:
+#' | **basin_nam**  | **CEDEX full basin name**           |
+#' |----------------|---------------------------          |
+#' | galicia        | AUGAS DE GALICIA – XUNTA DE GALICIA |
+#' | cantabrico     | C.H. CANTABRICO                     |
+#' | duero          | C.H. DUERO                          |
+#' | ebro           | C.H. EBRO                           |
+#' | guadalquivir   | C.H. GUADALQUIVIR                   |
+#' | guadiana       | C.H. GUADIANA                       |
+#' | jucar          | C.H. JUCAR                          |
+#' | mino           | C.H. MIÑO-SIL                       |
+#' | segura         | C.H. SEGURA                         |
+#' | tajo           | C.H. TAJO                           |
+#' 
 #'
 #' @export
 #' 
