@@ -10,14 +10,14 @@ The goal of the `hydrospain` R package is to allow users to easily
 download historical data from for gauging stations in Spanish rivers.
 Those datasets are available at the [CEDEX
 web](https://ceh.cedex.es/anuarioaforos/demarcaciones.asp) archive.
-Although files can be downloaded by hand one by one, $\tt{hydrospain}$
-allows the automatic retrieval of any of those files, appending WGS84
-UTM30 (EPSG:32630) coordinates to the datasets. In addition, date fields
-are formatted accordingly.
+Although files can be downloaded by hand one by one, `hydrospain` allows
+the automatic retrieval of any of those files, appending WGS84 UTM30
+(EPSG:32630) coordinates to the datasets. In addition, date fields are
+formatted accordingly.
 
 ## Installation
 
-You can install the development version of hydrospain from
+You can install the development version of `hydrospain` from
 [GitHub](https://github.com/) with:
 
 ``` r
