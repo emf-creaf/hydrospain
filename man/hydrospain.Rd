@@ -46,7 +46,7 @@ For a description of the files to retrieve, check
 "https://ceh.cedex.es/anuarioaforos/demarcaciones.asp" and click on the basin name for which you want
 to fetch data.
 
-code{hydrospain} will add UTM30 X-Y coordinates to gauging station data.
+\code{hydrospain} will add UTM30 X-Y coordinates to gauging station data.
 The coordinate reference system of the resulting \code{sf} object is, thus, \code{UTM 30N} always.
 There are coordinates in other reference systems in the original CEDEX files tables, although they are
 retrieved but not used.
