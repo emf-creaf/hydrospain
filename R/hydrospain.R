@@ -32,12 +32,10 @@
 #' "https://ceh.cedex.es/anuarioaforos/demarcaciones.asp" and click on the basin name for which you want
 #' to fetch data.
 #' 
-#' The coordinate reference system of the resulting \code{sf} object is \code{UTM 30N} always.
-#' There are coordinates in other systems in the original CEDEX files but they are not used
-#' (although they are also retrieved and included in the output object). Notice that long-lat coordinates
-#' are given as 'DDMMSS' strings only. Future versions will provide those coordinates in numeric format.
-#' 
-#' \code{hydrospain} will add UTM30 X-Y coordinates to gauging station data.
+#' code{hydrospain} will add UTM30 X-Y coordinates to gauging station data.
+#' The coordinate reference system of the resulting \code{sf} object is, thus, \code{UTM 30N} always.
+#' There are coordinates in other reference systems in the original CEDEX files tables, although they are
+#' retrieved but not used.
 #' 
 #' Available basin names, as of Nov. 2024, are the following:
 #' | **basin_nam**  | **CEDEX full basin name**           |
