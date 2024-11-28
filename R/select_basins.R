@@ -19,7 +19,9 @@
 #' @importFrom utils read.csv2
 #' 
 #' @examples
+#' \dontrun{
 #' df <- select_basins(c("duero", "EbrO"))
+#' }
 select_basins <- function(basin_nam = NULL) {
   
   if (!is.null(basin_nam)) {

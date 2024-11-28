@@ -52,7 +52,9 @@ There are coordinates in other systems in the original CEDEX files but they are 
 are given as 'DDMMSS' strings only. Future versions will provide those coordinates in numeric format.
 }
 \examples{
+\dontrun{
 # Read afliq.csv data from basin 'cantabrico'.
 x <- hydrospain(file_name = "afliq", basin_nam = "cantabrico", verbose = FALSE)
+}
 
 }

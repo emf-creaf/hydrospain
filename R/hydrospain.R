@@ -42,8 +42,10 @@
 #' @importFrom utils read.csv2
 #'
 #' @examples
+#' \dontrun{
 #' # Read afliq.csv data from basin 'cantabrico'.
 #' x <- hydrospain(file_name = "afliq", basin_nam = "cantabrico", verbose = FALSE)
+#' }
 #' 
 hydrospain <- function(file_name = "estaf", basin_nam = NULL, timeout = 120, first_day = 1, sf = TRUE, verbose = TRUE) {
 

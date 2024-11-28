@@ -19,7 +19,7 @@
 #' @noRd
 #' 
 #' @examples
-#'
+#' \dontrun{
 #' # In Spanish.
 #' x <- c("Búho búsqueda de piñatas exóticas con él",
 #' "Tráigaselo rápido al marqués con muchísimo azúcar",
@@ -37,6 +37,7 @@
 #' "Ça ne m'étonne pas, j'ai vu ce frêle musicien flâner près des quais, l'air rêveur",
 #' "Êtes-vous sûr?")
 #' print(rbind(z, replace_accent(z)))
+#' }
 #'
 replace_accent <- function(x) {
 

@@ -10,18 +10,18 @@ The goal of the $\tt{hydrospain}$ R package is to allow users to easily
 download historical data from for gauging stations in Spanish rivers.
 Those datasets are available at the [CEDEX web
 site](https://ceh.cedex.es/anuarioaforos/demarcaciones.asp). Rather that
-downloading oneself, $\texttt{cehAforos}$ allows the automatic retrieval
+downloading oneself, $\texttt{hydrospain}$ allows the automatic retrieval
 of any of those files, appending UTM30 coordinates to the datasets.
 
 ## Installation
 
-You can install the development version of cehAforos from
+You can install the development version of hydrospain from
 [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("githubinstall")
-# githubinstall::gh_install_packages("cehAforos", "devel")
-library(cehAforos)
+# githubinstall::gh_install_packages("hydrospain", "devel")
+library(hydrospain)
 ```
 
 ## Example

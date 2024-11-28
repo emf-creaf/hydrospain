@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(cehAforos)
+library(hydrospain)
 
-test_check("cehAforos")
+test_check("hydrospain")
