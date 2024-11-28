@@ -27,7 +27,7 @@ The goal of the `hydrospain` R package is to allow users to easily download hist
 
 You can install the development version of hydrospain from [GitHub](https://github.com/) with:
 
-```{r install_it}
+```{r install_it, eval = FALSE}
 # install.packages("githubinstall")
 # githubinstall::gh_install_packages("hydrospain", "devel")
 library(hydrospain)
