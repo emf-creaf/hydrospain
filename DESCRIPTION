@@ -1,14 +1,16 @@
 Package: hydrospain
-Title: Read and download data from gauging station in Spanish rivers
+Title: Read and Download Data from Gauging Station in Spanish Rivers
 Version: 0.0.1
 Authors@R: 
     person(given = "Roberto",
         family = "Molowny-Horas",
-        role = c("aut", "cre"),
+        role = c("aut", "cre", "cph"),
         email = "roberto@creaf.uab.es",
         comment = c(ORCID = "0000-0003-2626-6379")
     )
+Maintainer: Roberto Molowny-Horas <roberto@creaf.uab.es>
 Description: Simple download of daily and monthly flow data from gauging stations in Spanish rivers. Data sets are retrieved from the web of the Spanish CEDEX.
+Language: en-US
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -20,3 +22,5 @@ Config/testthat/edition: 3
 Depends: 
     R (>= 2.10)
 LazyData: no
+URL: https://github.com/emf-creaf/hydrospain
+BugReports: https://github.com/emf-creaf/hydrospain/issues
