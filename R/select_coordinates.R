@@ -29,7 +29,7 @@ select_coordinates <- function(table_name = "estaf") {
     stopifnot("Wrong 'table_name' input" = any(table_name %in% file_coordinates$file))
 
     # # Match 'table' name and file with coordinates.
-    file_coordinates <- file_coordinates |> dplyr::filter(file == table_name)
+    file_coordinates <- file_coordinates[file_coordinates$file == table_name,]
     
   }
 
