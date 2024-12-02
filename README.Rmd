@@ -61,7 +61,7 @@ x <- hydrospain(file_name = "afliq", basin_nam = "ebro", verbose = FALSE)
 
 <br>
 
-We can retrieve as easily the same file for all stations and from all the basins by omitting the $\tt{basin}$ parameter.
+We can retrieve as easily the same file for all stations and from all the basins by omitting the $\textit{basin}$ parameter.
 
 ```{r example2, eval = FALSE}
 x <- hydrospain(file_name = "afliq", verbose = FALSE)
