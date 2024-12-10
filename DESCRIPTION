@@ -9,7 +9,7 @@ Authors@R:
         comment = c(ORCID = "0000-0003-2626-6379")
     )
 Maintainer: Roberto Molowny-Horas <roberto@creaf.uab.es>
-Description: Simple download of daily and monthly flow data from gauging stations in Spanish rivers. Data sets are retrieved from the web of the Spanish CEDEX.
+Description: Simple download of daily and monthly flow data from gauging stations in Spanish rivers. Data sets are retrieved from the web of the Spanish Centro de Estudios y Experimentación de Obras Públicas (CEDEX): <https://ceh.cedex.es/anuarioaforos/default.asp>.
 Language: en-US
 License: MIT + file LICENSE
 Encoding: UTF-8

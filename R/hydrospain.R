@@ -57,7 +57,7 @@
 #' @importFrom utils read.csv2
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' # Read afliq.csv data from basin 'cantabrico'.
 #' x <- hydrospain(file_name = "afliq", basin_nam = "cantabrico", verbose = FALSE)
 #' }
@@ -83,6 +83,8 @@ hydrospain <- function(file_name = "estaf", basin_nam = NULL, timeout = 120, fir
     
     
   # Setting timeout.
+  old <- options()
+  on.exit(options(old))
   options(timeout = timeout)
 
   
