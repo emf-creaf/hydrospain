@@ -134,9 +134,14 @@ hydrospain <- function(file_name = "estaf", basin_nam = NULL, timeout = 120, fir
 
     # Read file with coordinates to sites.
     if (sf) {
+      print(1)
+      print(url_all$files[i])
+      print(url_all$coords[i])
       if (url_all$files[i] != url_all$coords[i]) {
         if (verbose) cli::cli_progress_update()
         dat_coord <- utils::read.csv2(url_all$coords[i], encoding = "latin1") |> utils::type.convert(as.is = TRUE)
+      } else {
+        dat_coord <- dat
       }
     }
 
