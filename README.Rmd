@@ -46,7 +46,7 @@ Available basin names, as of Nov. 2024, are the following:
 | guadalquivir   | C.H. GUADALQUIVIR                   |
 | guadiana       | C.H. GUADIANA                       |
 | jucar          | C.H. JUCAR                          |
-| mino           | C.H. MIÑO-SIL                       |
+| miño           | C.H. MIÑO-SIL                       |
 | segura         | C.H. SEGURA                         |
 | tajo           | C.H. TAJO                           |
 

@@ -67,7 +67,7 @@ hydrospain <- function(file_name = "estaf", basin_nam = NULL, timeout = 120, fir
 
   # Check 'table_name'.
   stopifnot("Input 'file_name' must be a single string" = is.character(file_name) & length(file_name) == 1)
-    file_name <- file_name |>
+  file_name <- file_name |>
     tolower() |>
     select_coordinates()
 
@@ -76,9 +76,7 @@ hydrospain <- function(file_name = "estaf", basin_nam = NULL, timeout = 120, fir
   if (!is.null(basin_nam)) {
     stopifnot("Input 'basin_nam' must be a character vector" = is.character(basin_nam) & is.vector(basin_nam))
     stopifnot("Wrong 'mino' input" = any(!("mino" %in% basin_nam)))
-    basin_nam <- basin_nam |>
-      tolower() |>
-      replace_accent()
+    basin_nam <- basin_nam |> tolower()
   }
     
     
@@ -88,14 +86,20 @@ hydrospain <- function(file_name = "estaf", basin_nam = NULL, timeout = 120, fir
   options(timeout = timeout)
 
   
-  # cli progress bar update option.
-  if (verbose) options(cli.progress_show_after = 0)
-  
+  # cli progress bar update option. If verbose = TRUE then basin_nam is loaded
+  if (verbose) {
+    options(cli.progress_show_after = 0)
+    # if (is.null(basin_nam)) {
+    #   data(basin_names, envir = environment())
+    #   basin_nam <- basin_names
+    # }
+  }
 
+  
   # Will 'table_name' actually need coordinates?
   if (is.na(file_name$file_coords)) sf <- FALSE
 
-  
+
   # Get the full URL for files and check them out.
   url <- "https://ceh-flumen64.cedex.es/anuarioaforos//anuario-2020-2021/"
   url_all <- check_url_files(url = url, file_name = file_name, basin_nam = basin_nam,
@@ -119,10 +123,13 @@ hydrospain <- function(file_name = "estaf", basin_nam = NULL, timeout = 120, fir
     }
 
 
-    # Read file with data.
+    # Read file with data. Stop if data file is empty.
     dat <- utils::read.csv2(url_all$files[i]) |> utils::type.convert(as.is = TRUE)
-
-
+    if (nrow(dat) == 0) {
+      stop(paste0("File ", file_name$file, " in basin ", basin_nam[i], " is empty"))
+    }
+    
+    
     # If column "anomes" is present, transform to a Date object.
     if ("anomes" %in% tolower(colnames(dat))) {
       dat$fecha <- anomes_to_date(dat$anomes, first_day = first_day)
@@ -130,18 +137,16 @@ hydrospain <- function(file_name = "estaf", basin_nam = NULL, timeout = 120, fir
     if ("fecha" %in% tolower(colnames(dat))) {
       dat$fecha <- as.Date(dat$fecha, "%d/%m/%Y")
     }
-    
+
 
     # Read file with coordinates to sites.
     if (sf) {
-      print(1)
-      print(url_all$files[i])
-      print(url_all$coords[i])
-      if (url_all$files[i] != url_all$coords[i]) {
-        if (verbose) cli::cli_progress_update()
-        dat_coord <- utils::read.csv2(url_all$coords[i], encoding = "latin1") |> utils::type.convert(as.is = TRUE)
-      } else {
-        dat_coord <- dat
+      if (verbose) cli::cli_progress_update()
+      dat_coord <- utils::read.csv2(url_all$coords[i], encoding = "latin1") |> utils::type.convert(as.is = TRUE)
+      
+      # Stop if file with coordinates is empty.
+      if (nrow(dat_coord) == 0) {
+        stop(paste0("File ", file_name$file_coords, " has no coordinates"))
       }
     }
 
@@ -159,6 +164,10 @@ hydrospain <- function(file_name = "estaf", basin_nam = NULL, timeout = 120, fir
     if (sf) {
       if (verbose) cli::cli_progress_update()
       j <- match(dat[, file_name$id_join], dat_coord[, file_name$id_join])
+      if (sum(!is.na(j)) < nrow(dat)) {
+        cli::cli_warn("Mismatch between data file ", file_name$file, " and file with coordinates ", file_name$coords)
+        if (sf)cli::cli_warn("Output will be a simple 'data.frame', not a 'sf' object")
+      }
       dat$x <- as.numeric(dat_coord$xutm30[j])
       dat$y <- as.numeric(dat_coord$yutm30[j])
     }

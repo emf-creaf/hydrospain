@@ -20,6 +20,25 @@ test_that("gauging station data", {
   expect_error(hydrospain(file_name = "xx", basin_nam = "xx", sf = TRUE, verbose = FALSE))
 
 
+  # These outputs should not be "sf".
+  f1 <- c("cdr", "gr_cuenca", "hojas50", "muni", "prov")
+  cu <- c("galicia", "cantabrico", "duero", "ebro", "guadalquivir", "guadiana", "jucar", "miño", "segura", "tajo")
+  for (i in f1) {
+    for (j in cu) {
+      expect_false("sf" %in% class(hydrospain(i, j, timeout = 1000, verbose = FALSE)))
+    }
+  }
+  
+  # But these outputs should. We leave "galicia" out due to some data gaps in the original files.
+  f2 <- c("afliq", "afliqc", "afliqci", "afliqe", "afliqi", "anual_a", "anual_c", "anual_e", "canal",
+          "embalse", "estadis_a", "estadis_ca", "estadis_en", "estadis_re", "estadis_sa", "estaf",
+          "estev", "evap", "extremos_a", "extremos_a_v", "mensual_a", "mensual_a_v", "mensual_c", "mensual_e")
+  for (i in f2) {
+    for (j in cu) {
+      
+      expect_true("sf" %in% class(hydrospain(i, j, timeout = 1000, verbose = FALSE)))
+    }
+  }
   
 })
 
