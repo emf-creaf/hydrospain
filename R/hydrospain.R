@@ -89,10 +89,14 @@ hydrospain <- function(file_name = "estaf", basin_nam = NULL, timeout = 120, fir
   # cli progress bar update option. If verbose = TRUE then basin_nam is loaded
   if (verbose) {
     options(cli.progress_show_after = 0)
-    # if (is.null(basin_nam)) {
-    #   data(basin_names, envir = environment())
-    #   basin_nam <- basin_names
-    # }
+  }
+  
+  
+  # In case basin_nam is internal and has to be printed on screen.
+  if (is.null(basin_nam)) {
+    basinout <- select_basins()[, 1]
+  } else {
+    basinout <- basin_nam
   }
 
   
@@ -118,7 +122,7 @@ hydrospain <- function(file_name = "estaf", basin_nam = NULL, timeout = 120, fir
       } else {
         nbars <- 7
       }
-      cli::cli_progress_bar(paste0("Downloading data for ", basin_nam[i], " basin"), total = nbars, clear = FALSE)
+      cli::cli_progress_bar(paste0("Downloading data for ", basinout[i], " basin"), total = nbars, clear = FALSE)
       cli::cli_progress_update()
     }
 
@@ -126,7 +130,7 @@ hydrospain <- function(file_name = "estaf", basin_nam = NULL, timeout = 120, fir
     # Read file with data. Stop if data file is empty.
     dat <- utils::read.csv2(url_all$files[i]) |> utils::type.convert(as.is = TRUE)
     if (nrow(dat) == 0) {
-      stop(paste0("File ", file_name$file, " in basin ", basin_nam[i], " is empty"))
+      stop(paste0("File ", file_name$file, " in basin ", basinout[i], " is empty"))
     }
     
     

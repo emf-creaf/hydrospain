@@ -8,12 +8,14 @@
 
 The goal of the `hydrospain` R package is to allow users to easily
 download historical data from for gauging stations in Spanish rivers.
-Those datasets are available at the [CEDEX
-web](https://ceh.cedex.es/anuarioaforos/demarcaciones.asp) archive.
-Although files can be downloaded by hand one by one, `hydrospain` allows
-the automatic retrieval of any of those files, appending WGS84 UTM30
-(EPSG:32630) coordinates to the datasets. In addition, date fields are
-formatted accordingly.
+Those datasets are available at the
+[CEDEX](https://ceh.cedex.es/anuarioaforos/demarcaciones.asp) web
+archive. Although files can be downloaded by hand one by one,
+`hydrospain` allows the automatic retrieval of any of those files,
+appending WGS84 UTM30 (EPSG:32630) coordinates to the datasets and.
+optionally, creating a spatial
+[sf](https://cran.r-project.org/web/packages/sf/index.html) object. In
+addition, date fields are formatted accordingly.
 
 ## Installation
 
@@ -30,18 +32,26 @@ library(hydrospain)
 
 Available basin names, as of Nov. 2024, are the following:
 
-| **basin_nam** | **CEDEX full basin name**           |
-|---------------|-------------------------------------|
-| galicia       | AUGAS DE GALICIA – XUNTA DE GALICIA |
-| cantabrico    | C.H. CANTABRICO                     |
-| duero         | C.H. DUERO                          |
-| ebro          | C.H. EBRO                           |
-| guadalquivir  | C.H. GUADALQUIVIR                   |
-| guadiana      | C.H. GUADIANA                       |
-| jucar         | C.H. JUCAR                          |
-| miño          | C.H. MIÑO-SIL                       |
-| segura        | C.H. SEGURA                         |
-| tajo          | C.H. TAJO                           |
+| **basin_nam** argument | **CEDEX full basin name**           |
+|------------------------|-------------------------------------|
+| galicia                | AUGAS DE GALICIA – XUNTA DE GALICIA |
+| cantabrico             | C.H. CANTABRICO                     |
+| duero                  | C.H. DUERO                          |
+| ebro                   | C.H. EBRO                           |
+| guadalquivir           | C.H. GUADALQUIVIR                   |
+| guadiana               | C.H. GUADIANA                       |
+| jucar                  | C.H. JUCAR                          |
+| miño                   | C.H. MIÑO-SIL                       |
+| segura                 | C.H. SEGURA                         |
+| tajo                   | C.H. TAJO                           |
+
+<br>
+
+Files that can be retrieved from the
+[CEDEX](https://ceh.cedex.es/anuarioaforos/demarcaciones.asp) web site
+correspond to data for gauging stations located at rivers, channels,
+reservoirs and evaporation stations. For a full list of files check the
+[CEDEX](https://ceh.cedex.es/anuarioaforos/demarcaciones.asp) web.
 
 ## Example
 

@@ -12,9 +12,9 @@ cdr;;
 embalse;embalse;ref_ceh
 estadis_a;estaf;indroea
 estadis_ca;canal;ref_ceh
-estadis_en;canal;ref_ceh
-estadis_re;canal;ref_ceh
-estadis_sa;canal;ref_ceh
+estadis_en;embalse;ref_ceh
+estadis_re;embalse;ref_ceh
+estadis_sa;embalse;ref_ceh
 estaf;estaf;indroea
 estev;estev;ref_evap
 evap;estev;ref_evap
@@ -25,6 +25,6 @@ hojas50;;
 mensual_a;estaf;indroea
 mensual_a_v;estaf;indroea
 mensual_c;canal;ref_ceh
-mensual_e;canal;ref_ceh
+mensual_e;embalse;ref_ceh
 muni;;
 prov;;
