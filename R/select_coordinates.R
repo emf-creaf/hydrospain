@@ -17,9 +17,7 @@
 #' @noRd
 #' 
 #' @examples
-#' \dontrun{
 #' x <- select_coordinates("afliq")
-#' }
 #' 
 select_coordinates <- function(table_name = "estaf") {
 

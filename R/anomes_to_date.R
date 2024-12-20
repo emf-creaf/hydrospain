@@ -1,5 +1,9 @@
-#' Title
-#'
+#' Convert 'yearmonth' string to a Date object
+#' 
+#' @description
+#' \code{anomes_to_date} converts a 'yearmonth' string like e.g. 199201 to a Date
+#' object, where 'year' and 'month' have four and two digits, respectively.
+#' 
 #' @param dat numeric or character \code{vector} with the strings to extract the date from.
 #' @param first_day numeric \code{vector} containing the day number(s) that will be used when
 #' building the \code{date} object.
@@ -13,10 +17,9 @@
 #' @noRd
 #' 
 #' @examples
-#' \dontrun{#' 
 #' # Same result.
 #' y <- anomes_to_date(199201)
-#' }
+#' 
 anomes_to_date <- function(dat, first_day = 1) {
   
 

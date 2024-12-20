@@ -17,10 +17,8 @@
 #' @noRd
 #'
 #' @examples
-#' \dontrun{
 #' # Check leap years for XX century.
 #' is_leap_year(seq(1900, 1999))
-#' }
 #' 
 is_leap_year <- function(year) {
   
