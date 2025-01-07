@@ -44,5 +44,5 @@ z <- c("Où est allé ce très gentil employé à l'élégant béret?",
 "Êtes-vous sûr?")
 print(rbind(z, replace_accent(z)))
 
+
 }
-\keyword{internal}

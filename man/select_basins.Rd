@@ -25,4 +25,3 @@ It uses internal package data, so it will only work when used by other package f
 df <- select_basins(c("duero", "EbrO"))
 
 }
-\keyword{internal}

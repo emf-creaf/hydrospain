@@ -22,4 +22,3 @@ coordinates will be found, and "id_join", mentioning which key can be used for l
 x <- select_coordinates("afliq")
 
 }
-\keyword{internal}
