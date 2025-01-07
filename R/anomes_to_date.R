@@ -18,7 +18,6 @@
 #' # Same result.
 #' y <- anomes_to_date(199201)
 #'
-#' @keywords internal
 #' @export
 #' 
 anomes_to_date <- function(dat, first_day = 1) {

@@ -36,7 +36,6 @@
 #' print(rbind(z, replace_accent(z)))
 #'
 #'
-#' @keywords internal
 #' @export
 #' 
 replace_accent <- function(x) {

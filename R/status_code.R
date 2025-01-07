@@ -9,7 +9,6 @@
 #' @return
 #' Status code of the response to the issued request.
 #' 
-#' @keywords internal
 #' @export
 #'
 #' @importFrom httr2 request req_perform resp_status

@@ -18,7 +18,6 @@
 #' # Check leap years for XX century.
 #' is_leap_year(seq(1900, 1999))
 #' 
-#' @keywords internal
 #' @export
 #' 
 is_leap_year <- function(year) {

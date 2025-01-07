@@ -14,7 +14,6 @@
 #' 
 #' @importFrom utils read.csv2
 #' 
-#' @keywords internal
 #' @export
 #' 
 #' @examples

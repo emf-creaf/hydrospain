@@ -14,7 +14,6 @@
 #' @details
 #' It uses internal package data, so it will only work when used by other package functions.
 #' 
-#' @keywords internal
 #' @export
 #' 
 #' @importFrom utils read.csv2
