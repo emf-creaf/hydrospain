@@ -31,8 +31,6 @@
 #' file_name <- data.frame(file = "afliq", file_coords = "estaf", id_join = "indroea")
 #' check_url_files(url, file_name, "ebro")
 #' }
-#' 
-#' @keywords internal
 #'
 check_url_files <- function(url, file_name, basin_nam, timeout = 120, sf = TRUE, verbose = TRUE) {
 

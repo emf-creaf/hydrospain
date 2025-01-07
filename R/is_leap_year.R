@@ -14,8 +14,6 @@
 #' If year is <1582 (the year that marked the introduction of the Gregorian calendar),
 #' an error message is issued.
 #'
-#' @keywords internal
-#'
 #' @examples
 #' # Check leap years for XX century.
 #' is_leap_year(seq(1900, 1999))
