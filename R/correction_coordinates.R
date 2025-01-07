@@ -11,7 +11,7 @@
 #' \code{correction_coordinates} returns the input \code{data.frame}.
 #'
 #' @details
-#' A correction to coordinates, email from Carmen Mirta Dimas Suárez (CEH)
+#' A correction to coordinates (Carmen Mirta Dimas Suárez, CEH, personal communication)
 #' on July 17th, 2024. The correction applies to stations 3179, 3191, 3275 and 5107 only.
 #'
 #' @export
