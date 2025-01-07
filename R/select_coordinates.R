@@ -15,6 +15,7 @@
 #' @importFrom utils read.csv2
 #' 
 #' @keywords internal
+#' @export
 #' 
 #' @examples
 #' x <- select_coordinates("afliq")

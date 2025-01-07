@@ -15,8 +15,6 @@
 #' 1. Spanish á, é, í, ó, ú, ü, ñ: replaced by a, e, i, o, u, u, n.
 #' 2. Catalan à, è, é, ì, ï, ò, ú, ü, ç: replaced by a, e, e, i, i, o, u, u, c
 #' 3. French à, â, è, é, ê, ë, î, ï, ô, ö, û, ù, ü, ÿ, ç: replaced by a, a, e, e, e, e, i, i, o, o, u, u, u, y, c
-#'
-#' @keywords internal
 #' 
 #' @examples
 #' # In Spanish.
@@ -37,6 +35,10 @@
 #' "Êtes-vous sûr?")
 #' print(rbind(z, replace_accent(z)))
 #'
+#'
+#' @keywords internal
+#' @export
+#' 
 replace_accent <- function(x) {
 
   stopifnot("Input vector 'x' must be of type 'character'" = is.vector(x) & is.character(x))
