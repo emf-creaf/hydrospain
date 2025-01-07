@@ -32,7 +32,7 @@
 #' check_url_files(url, file_name, "ebro")
 #' }
 #' 
-#' @noRd
+#' @keywords internal
 #'
 check_url_files <- function(url, file_name, basin_nam, timeout = 120, sf = TRUE, verbose = TRUE) {
 

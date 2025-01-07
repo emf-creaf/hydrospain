@@ -16,7 +16,7 @@
 #' 2. Catalan à, è, é, ì, ï, ò, ú, ü, ç: replaced by a, e, e, i, i, o, u, u, c
 #' 3. French à, â, è, é, ê, ë, î, ï, ô, ö, û, ù, ü, ÿ, ç: replaced by a, a, e, e, e, e, i, i, o, o, u, u, u, y, c
 #'
-#' @noRd
+#' @keywords internal
 #' 
 #' @examples
 #' # In Spanish.

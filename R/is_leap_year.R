@@ -14,7 +14,7 @@
 #' If year is <1582 (the year that marked the introduction of the Gregorian calendar),
 #' an error message is issued.
 #'
-#' @noRd
+#' @keywords internal
 #'
 #' @examples
 #' # Check leap years for XX century.
