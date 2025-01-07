@@ -66,8 +66,9 @@ Available basin names, as of Nov. 2024, are the following:\tabular{ll}{
 }
 }
 \examples{
+
 \donttest{
-# Read afliq.csv data from basin 'cantabrico'.
+# Read afliq.csv data for the 'duero' river basin.
 x <- hydrospain(file_name = "afliq", basin_nam = "duero", verbose = FALSE)
 }
 
