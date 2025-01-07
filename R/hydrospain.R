@@ -58,10 +58,10 @@
 #'
 #' @examples
 #' 
-#' # \donttest{
+#' \donttest{
 #' # Read afliq.csv data for the 'duero' river basin.
 #' x <- hydrospain(file_name = "afliq", basin_nam = "duero", timeout = 360, verbose = FALSE)
-#' # }
+#' }
 #' 
 hydrospain <- function(file_name = "estaf", basin_nam = NULL, timeout = 120, first_day = 1, sf = TRUE, verbose = TRUE) {
 
