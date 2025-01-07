@@ -4,6 +4,7 @@
 ## Overview
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
 The goal of the `hydrospain` R package is to allow users to easily
@@ -14,8 +15,8 @@ archive. Although files can be downloaded by hand one by one,
 `hydrospain` allows the automatic retrieval of any of those files,
 appending WGS84 UTM30 (EPSG:32630) coordinates to the datasets and.
 optionally, creating a spatial
-[sf](https://cran.r-project.org/web/packages/sf/index.html) object. In
-addition, date fields are formatted accordingly.
+[sf](https://CRAN.R-project.org/package=sf) object. In addition, date
+fields are formatted accordingly.
 
 ## Installation
 
