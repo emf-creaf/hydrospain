@@ -13,13 +13,12 @@
 #' @details
 #' A correction to coordinates (Carmen Mirta Dimas Suárez, CEH, personal communication)
 #' on July 17th, 2024. The correction applies to stations 3179, 3191, 3275 and 5107 only.
-#'
-#' @export
 #' 
 #' @examples
 #' df <- data.frame(indroea = c("3179", "3000"), lat = 1:2, long = 3:4)
 #' correction_coordinates(df)
 #' 
+#' @export
 #' @keywords internal
 #' 
 correction_coordinates <- function(df) {

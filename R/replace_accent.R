@@ -37,7 +37,6 @@
 #'
 #'
 #' @export
-#' 
 #' @keywords internal
 #' 
 replace_accent <- function(x) {

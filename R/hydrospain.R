@@ -59,7 +59,6 @@
 #' @examples
 #' 
 #' # Read afliq.csv data for the 'duero' river basin.
-#' 
 #' \donttest{
 #'   x <- hydrospain(file_name = "afliq", basin_nam = "duero", timeout = 360, verbose = FALSE)
 #' }

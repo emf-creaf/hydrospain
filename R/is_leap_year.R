@@ -19,7 +19,6 @@
 #' is_leap_year(seq(1900, 1999))
 #' 
 #' @export
-#' 
 #' @keywords internal
 #' 
 is_leap_year <- function(year) {
