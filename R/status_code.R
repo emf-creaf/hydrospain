@@ -15,7 +15,9 @@
 #' @importFrom httr2 request req_perform resp_status
 #' 
 #' @examples
-#' status_code("http://r-project.org")
+#' \donttest{
+#'   status_code("http://r-project.org")
+#' }
 #' 
 status_code <- function(url) {
   

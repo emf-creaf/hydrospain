@@ -17,8 +17,6 @@
 #' @export
 #' @keywords internal
 #' 
-#' @importFrom utils read.csv2
-#' 
 #' @examples
 #' df <- select_basins(c("duero", "EbrO"))
 #' 

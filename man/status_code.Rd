@@ -17,7 +17,9 @@ Status code of the response to the issued request.
 return the status code of the connection.
 }
 \examples{
-status_code("http://r-project.org")
+\donttest{
+  status_code("http://r-project.org")
+}
 
 }
 \keyword{internal}
