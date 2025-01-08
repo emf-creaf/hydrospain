@@ -38,6 +38,8 @@
 #'
 #' @export
 #' 
+#' @keywords internal
+#' 
 replace_accent <- function(x) {
 
   stopifnot("Input vector 'x' must be of type 'character'" = is.vector(x) & is.character(x))

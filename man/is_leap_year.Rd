@@ -26,3 +26,4 @@ an error message is issued.
 is_leap_year(seq(1900, 1999))
 
 }
+\keyword{internal}

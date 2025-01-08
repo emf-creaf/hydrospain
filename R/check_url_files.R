@@ -26,13 +26,14 @@
 #' 'file_name' will be pasted to the input 'URL' and a status request will be sent.
 #' 
 #' @examples
-#' \donttest{
+#' 
 #' url <- "https://ceh-flumen64.cedex.es/anuarioaforos//anuario-2020-2021/"
 #' file_name <- data.frame(file = "afliq", file_coords = "estaf", id_join = "indroea")
-#' check_url_files(url, file_name, "ebro", timeout = 360)
+#' \donttest{
+#'   ⁠x <- check_url_files(url, file_name, "ebro", timeout = 360)
 #' }
 #' 
-#' @export
+#' @keywords internal
 #'
 check_url_files <- function(url, file_name, basin_nam, timeout = 120, sf = TRUE, verbose = TRUE) {
 

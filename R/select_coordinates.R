@@ -16,6 +16,8 @@
 #' 
 #' @export
 #' 
+#' @keywords internal
+#' 
 #' @examples
 #' x <- select_coordinates("afliq")
 #' 

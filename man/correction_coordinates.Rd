@@ -26,3 +26,4 @@ df <- data.frame(indroea = c("3179", "3000"), lat = 1:2, long = 3:4)
 correction_coordinates(df)
 
 }
+\keyword{internal}

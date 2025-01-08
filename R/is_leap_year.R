@@ -20,6 +20,8 @@
 #' 
 #' @export
 #' 
+#' @keywords internal
+#' 
 is_leap_year <- function(year) {
   
   

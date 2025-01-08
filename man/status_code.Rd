@@ -20,3 +20,4 @@ return the status code of the connection.
 status_code("http://r-project.org")
 
 }
+\keyword{internal}

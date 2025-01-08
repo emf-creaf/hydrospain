@@ -27,3 +27,4 @@ For February \code{first_day} must be 29 in non-leap years, and 28 on leap years
 y <- anomes_to_date(199201)
 
 }
+\keyword{internal}

@@ -20,6 +20,8 @@
 #'
 #' @export
 #' 
+#' @keywords internal
+#' 
 anomes_to_date <- function(dat, first_day = 1) {
   
 
