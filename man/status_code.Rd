@@ -18,7 +18,7 @@ return the status code of the connection.
 }
 \examples{
 \donttest{
-  status_code("http://r-project.org")
+  status_code("https://www.google.com")
 }
 
 }
