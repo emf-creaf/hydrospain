@@ -46,7 +46,7 @@ url <- "https://ceh-flumen64.cedex.es/anuarioaforos//anuario-2020-2021/"
 file_name <- data.frame(file = "afliq", file_coords = "estaf", id_join = "indroea")
 
 \donttest{
-x <- check_url_files(url, file_name, "ebro", timeout = 300)
+x <- check_url_files(url, file_name, "ebro", timeout = 300, verbose = FALSE)
 }
 
 }
