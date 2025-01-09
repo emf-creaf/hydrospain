@@ -13,7 +13,7 @@ status_code(url)
 Status code of the response to the issued request.
 }
 \description{
-\code{status_code} uses functions from the \code{httr2} package to check and
+\code{status_code} uses the \code{GET} functions from the \code{httr} package to
 return the status code of the connection.
 }
 \examples{
