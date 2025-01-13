@@ -5,7 +5,7 @@ test_that("gauging station data", {
   # No need for coordinates.
   x <- hydrospain("hojas50", basin_nam = "guadalquivir", timeout = 1000, verbose = FALSE)
   expect_false(any("sf" %in% class(x)))
-  
+
   x <- hydrospain(file_name = "afliq", basin_nam = "duero", sf = TRUE, timeout = 1000, verbose = FALSE)
   expect_true("sf" %in% class(x))
   

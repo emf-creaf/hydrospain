@@ -107,8 +107,7 @@ hydrospain <- function(file_name = "estaf", basin_nam = NULL, timeout = 120, fir
 
   # Get the full URL for files and check them out.
   url <- "https://ceh-flumen64.cedex.es/anuarioaforos//anuario-2020-2021/"
-  url_all <- check_url_files(url = url, file_name = file_name, basin_nam = basin_nam,
-                             timeout = timeout, sf = sf, verbose = verbose)
+  url_all <- full_name_url(url = url, file_name = file_name, basin_nam = basin_nam, sf = sf)
 
   
   # Reads data for all basins
