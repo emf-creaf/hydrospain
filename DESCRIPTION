@@ -15,7 +15,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
-Imports: cli (>= 3.6.3), sf (>= 1.0-17), httr (>= 1.4.7)
+Imports: cli (>= 3.6.3), sf (>= 1.0-17)
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
