@@ -1,7 +1,7 @@
 #' Status code of a HTTP or HTTPS request
 #' 
 #' @description
-#' \code{status_code} uses the \code{GET} functions from the \code{httr} package to 
+#' \code{status_code} uses functions from the \code{httr2} package to check and
 #' return the status code of the connection.
 #' 
 #' @param url \code{character} string with the URL address.
@@ -12,7 +12,7 @@
 #' @export
 #' @keywords internal
 #'
-#' @importFrom httr GET
+#' @importFrom httr2 request req_perform resp_status
 #' 
 #' @examples
 #' \donttest{
@@ -27,7 +27,7 @@ status_code <- function(url) {
               grepl("http://", url) | grepl("https://", url))
   
 
-  stat_code <- httr::GET(url)$status_code
+  stat_code <- url |> httr2::request() |> httr2::req_perform() |> httr2::resp_status()
   
   
   return(stat_code)
